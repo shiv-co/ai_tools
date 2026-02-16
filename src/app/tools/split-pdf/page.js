@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { PDFDocument } from "pdf-lib";
 import { FaUpload } from "react-icons/fa";
+import Link from "next/link";
 
 /* =============================
    Helpers
@@ -282,6 +283,52 @@ export default function SplitPdfPage() {
   </div>
 </div>
 
+{/* ================= SEO CONTENT ================= */}
+<section className="max-w-4xl mt-20 space-y-8">
+  <h2 className="text-2xl font-bold">
+    Split PDF Online – Fast & Secure
+  </h2>
+
+  <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+    Our Split PDF tool allows you to extract specific pages from a PDF file
+    instantly in your browser. Your file is never uploaded to any server.
+    Everything happens locally on your device.
+  </p>
+
+  <h3 className="text-xl font-semibold">
+    How to Split a PDF File
+  </h3>
+
+  <ul className="list-disc pl-6 text-sm text-[var(--text-secondary)] space-y-2">
+    <li>Upload your PDF file.</li>
+    <li>Enter page range like 1-3,5,8-10.</li>
+    <li>Click Split PDF.</li>
+    <li>Download instantly.</li>
+  </ul>
+</section>
+
+
+
+<section className="mt-16">
+  <h3 className="text-xl font-semibold mb-4">
+    Related PDF Tools
+  </h3>
+
+  <div className="grid md:grid-cols-3 gap-4">
+    <Link href="/tools/merge-pdf" className="text-[var(--accent)] hover:underline">
+      Merge PDF Files
+    </Link>
+    <Link href="/tools/compress-pdf" className="text-[var(--accent)] hover:underline">
+      Compress PDF Online
+    </Link>
+    <Link href="/tools/reorder-pdf" className="text-[var(--accent)] hover:underline">
+      Reorder PDF Pages
+    </Link>
+  </div>
+</section>
+
+
+
         {/* FAQ SCHEMA */}
         <script
           type="application/ld+json"
@@ -300,6 +347,23 @@ export default function SplitPdfPage() {
             }),
           }}
         />
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      name: "Split PDF Online Tool",
+      applicationCategory: "UtilityApplication",
+      operatingSystem: "Any",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD"
+      }
+    }),
+  }}
+/>
 
       </section>
     </main>
