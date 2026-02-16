@@ -1,26 +1,182 @@
 @import "tailwindcss";
 
+
+/* Force correct native form rendering in dark mode */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light dark;
+}
+select {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+/* 🌤️ Light Theme */
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --text-primary: #121317;
+  --text-secondary: #858484;
+  /* #9799a3; */
+  --border: #f1f3f5;
+  --accent: #5069e7;
+  
+  /* Opacity variants */
+  --accent-opacity-18: rgba(80, 105, 231, 0.18);
+  --accent-opacity-16: rgba(80, 105, 231, 0.16);
+  --accent-opacity-20: rgba(80, 105, 231, 0.20);
+  --accent-opacity-10: rgba(80, 105, 231, 0.10);
+  --accent-opacity-6: rgba(80, 105, 231, 0.06);
+  --accent-opacity-70: rgba(80, 105, 231, 0.70);
+  --accent-opacity-60: rgba(80, 105, 231, 0.60);
+  --surface-opacity-5: rgba(255, 255, 255, 0.05);
+  --surface-opacity-4: rgba(255, 255, 255, 0.04);
+  --surface-opacity-10: rgba(255, 255, 255, 0.10);
+  --surface-opacity-20: rgba(255, 255, 255, 0.20);
+  --border-opacity-80: rgba(241, 243, 245, 0.80);
+  --border-opacity-70: rgba(241, 243, 245, 0.70);
+  --border-opacity-60: rgba(241, 243, 245, 0.60);
+  --bg-opacity-60: rgba(255, 255, 255, 0.60);
+  --bg-opacity-30: rgba(255, 255, 255, 0.30);
+  --bg-opacity-10: rgba(255, 255, 255, 0.10);
+  --bg-opacity-5: rgba(255, 255, 255, 0.05);
+  --text-secondary-opacity-80: rgba(151, 153, 163, 0.80);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* 🌙 Dark Theme */
+.dark {
+  --bg: #15171e;
+  --surface: #1e2028;
+  --text-primary: #ffffff;
+  --text-secondary: #9799a3;
+  --border: #2d303a;
+  --accent: #5069e7;
+  
+  /* Opacity variants */
+  --accent-opacity-18: rgba(80, 105, 231, 0.18);
+  --accent-opacity-16: rgba(80, 105, 231, 0.16);
+  --accent-opacity-20: rgba(80, 105, 231, 0.20);
+  --accent-opacity-10: rgba(80, 105, 231, 0.10);
+  --accent-opacity-6: rgba(80, 105, 231, 0.06);
+  --accent-opacity-70: rgba(80, 105, 231, 0.70);
+  --accent-opacity-60: rgba(80, 105, 231, 0.60);
+  --surface-opacity-5: rgba(30, 32, 40, 0.05);
+  --surface-opacity-4: rgba(30, 32, 40, 0.04);
+  --surface-opacity-10: rgba(30, 32, 40, 0.10);
+  --surface-opacity-20: rgba(30, 32, 40, 0.20);
+  --border-opacity-80: rgba(45, 48, 58, 0.80);
+  --border-opacity-70: rgba(45, 48, 58, 0.70);
+  --border-opacity-60: rgba(45, 48, 58, 0.60);
+  --bg-opacity-60: rgba(21, 23, 30, 0.60);
+  --bg-opacity-30: rgba(21, 23, 30, 0.30);
+  --bg-opacity-10: rgba(21, 23, 30, 0.10);
+  --bg-opacity-5: rgba(21, 23, 30, 0.05);
+  --text-secondary-opacity-80: rgba(151, 153, 163, 0.80);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+/* =========================
+   Blog Article Typography
+   (NO Tailwind config needed)
+========================= */
+
+.article-content {
+  max-width: 100%;
 }
+
+.article-content h1,
+.article-content h2,
+.article-content h3 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.article-content h1 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.article-content h2 {
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+}
+
+.article-content h3 {
+  font-size: 1.25rem;
+}
+
+.article-content p {
+  margin: 1.25rem 0;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+.article-content ul {
+  margin: 1.2rem 0 1.2rem 1.2rem;
+}
+
+.article-content li {
+  margin: 0.6rem 0;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.article-content blockquote {
+  margin: 2rem 0;
+  padding: 1.5rem 1.75rem;
+  border-left: 4px solid var(--accent);
+  background: var(--surface-opacity-5);
+  border-radius: 0.75rem;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.article-content img {
+  border-radius: 1rem;
+  margin: 2rem 0;
+}
+
+.article-content strong {
+  color: var(--text-primary);
+}
+
+
+/* ===== FIX DARK MODE SELECT / OPTION VISIBILITY ===== */
+
+select {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* Dropdown options */
+option {
+  background-color: var(--bg);
+  color: var(--text-primary);
+}
+
+/* Fix for Chromium-based browsers */
+select option:checked,
+select option:hover {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+.ReactCrop__crop-mask {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+
