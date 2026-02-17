@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import heic2any from "heic2any";
+// import heic2any from "heic2any";
 
 export default function HeicToJpgPage() {
   const [files, setFiles] = useState([]);
@@ -16,42 +16,82 @@ export default function HeicToJpgPage() {
     setResults([]);
   };
 
+  // const convertToJpg = async () => {
+  //   if (!files.length) return;
+
+  //   setLoading(true);
+  //   setResults([]);
+
+  //   try {
+  //     const converted = [];
+
+  //     for (const file of files) {
+  //       const outputBlob = await heic2any({
+  //         blob: file,
+  //         toType: "image/jpeg",
+  //         quality: 0.9,
+  //       });
+
+  //       const blob = Array.isArray(outputBlob)
+  //         ? outputBlob[0]
+  //         : outputBlob;
+
+  //       const url = URL.createObjectURL(blob);
+
+  //       converted.push({
+  //         name: file.name.replace(/\.heic$/i, ".jpg"),
+  //         url,
+  //       });
+  //     }
+
+  //     setResults(converted);
+  //   } catch (err) {
+  //     console.error("HEIC conversion error:", err);
+  //     alert("Failed to convert HEIC image. Please try again.");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
   const convertToJpg = async () => {
-    if (!files.length) return;
+  if (!files.length) return;
 
-    setLoading(true);
-    setResults([]);
+  setLoading(true);
+  setResults([]);
 
-    try {
-      const converted = [];
+  try {
+    const heic2any = (await import("heic2any")).default;
 
-      for (const file of files) {
-        const outputBlob = await heic2any({
-          blob: file,
-          toType: "image/jpeg",
-          quality: 0.9,
-        });
+    const converted = [];
 
-        const blob = Array.isArray(outputBlob)
-          ? outputBlob[0]
-          : outputBlob;
+    for (const file of files) {
+      const outputBlob = await heic2any({
+        blob: file,
+        toType: "image/jpeg",
+        quality: 0.9,
+      });
 
-        const url = URL.createObjectURL(blob);
+      const blob = Array.isArray(outputBlob)
+        ? outputBlob[0]
+        : outputBlob;
 
-        converted.push({
-          name: file.name.replace(/\.heic$/i, ".jpg"),
-          url,
-        });
-      }
+      const url = URL.createObjectURL(blob);
 
-      setResults(converted);
-    } catch (err) {
-      console.error("HEIC conversion error:", err);
-      alert("Failed to convert HEIC image. Please try again.");
-    } finally {
-      setLoading(false);
+      converted.push({
+        name: file.name.replace(/\.heic$/i, ".jpg"),
+        url,
+      });
     }
-  };
+
+    setResults(converted);
+  } catch (err) {
+    console.error("HEIC conversion error:", err);
+    alert("Failed to convert HEIC image. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <main className="min-h-screen bg-[var(--bg)] text-[var(--text-primary)]">
