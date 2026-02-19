@@ -55,6 +55,21 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+        {/* <!-- Google tag (gtag.js) --> */}
+
+
+  <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-WVR34ZM8P8"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WVR34ZM8P8');
+          `}
+        </Script>
 
       </body>
     </html>
