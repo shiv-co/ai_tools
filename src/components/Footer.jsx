@@ -1,5 +1,6 @@
 
-
+import Link from "next/link";
+import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="border-t border-[var(--border)] bg-[var(--bg)]">
@@ -11,12 +12,32 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-8 h-8 rounded-lg bg-[var(--accent)] text-white flex items-center justify-center font-bold">
-                AI
-              </div>
-              <span className="font-semibold text-lg">
-                AITools
-              </span>
+             <Link
+  href="/"
+  className="group flex items-center gap-3 transition duration-300"
+>
+  {/* Logo */}
+  <div className="relative h-12 w-12 overflow-hidden rounded-xl shadow-md transition-transform duration-300 group-hover:scale-105">
+    <Image
+      src="/logo.png"
+      alt="AI Tech Tactics Logo"
+      fill
+      sizes="48px"
+      className="object-contain"
+      priority
+    />
+  </div>
+
+  {/* Brand Text */}
+  <div className="leading-tight">
+    <span className="block text-sm font-bold tracking-wide text-[var(--text-primary)] group-hover:text-[var(--accent)] transition">
+      AI TECH TACTICS
+    </span>
+    <span className="hidden sm:block text-[10px] uppercase tracking-widest text-[var(--text-secondary)]">
+      Smart Tools Hub
+    </span>
+  </div>
+</Link>
             </div>
             <p className="text-sm text-[var(--text-secondary)]">
               Discover the best free AI tools to improve productivity, creativity, and growth.

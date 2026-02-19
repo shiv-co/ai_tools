@@ -20,7 +20,7 @@ export const metadata = {
     "PDF tools",
     "image tools",
     "text tools",
-    "AI productivity tools",
+    "Media productivity tools",
   ],
 
   openGraph: {
