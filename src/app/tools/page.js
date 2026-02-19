@@ -23,13 +23,13 @@ export const metadata = {
   description:
     "Access free online PDF tools, image converters, compressors, text utilities, and AI-powered productivity tools. 100% browser-based, fast, and secure.",
   alternates: {
-    canonical: "https://yourdomain.com/tools",
+    canonical: "https://aitechtactics.com/tools",
   },
   openGraph: {
     title: "Free Online Tools – PDF, Image & Text Utilities",
     description:
       "Powerful browser-based tools for PDFs, images, text and AI. No installation required.",
-    url: "https://yourdomain.com/tools",
+    url: "https://aitechtactics.com/tools",
     type: "website",
   },
 };

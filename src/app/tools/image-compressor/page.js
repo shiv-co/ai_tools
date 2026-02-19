@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import JSZip from "jszip";
+import Link from "next/link";
 
 /* =============================
    FAQ DATA
@@ -96,6 +97,7 @@ export default function ImageCompressorPage() {
   /* =============================
      ZIP DOWNLOAD
   ============================== */
+
   const downloadZip = async () => {
     const zip = new JSZip();
 
@@ -118,26 +120,7 @@ export default function ImageCompressorPage() {
   return (
     <main className="min-h-screen bg-[var(--bg)] text-[var(--text-primary)]">
 
-      {/* FAQ SCHEMA (SEO) */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: FAQS.map((faq) => ({
-              "@type": "Question",
-              name: faq.q,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: faq.a,
-              },
-            })),
-          }),
-        }}
-      />
-
-      <section className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-20 space-y-12">
+      <section className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 space-y-12">
 
         {/* HEADER */}
         <div className="max-w-3xl space-y-4">
@@ -284,6 +267,29 @@ export default function ImageCompressorPage() {
           </div>
         )}
 
+        
+        {/* INFO CARDS */}
+        <div className="grid gap-6 sm:grid-cols-3">
+          <div className="rounded-2xl border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] p-5">
+            <h3 className="font-semibold">Private</h3>
+            <p className="mt-2 text-sm text-[var(--text-secondary)]">
+              Files never leave your device. All compression happens locally in your browser.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] p-5">
+            <h3 className="font-semibold">Supports JPG,PNG,WebP</h3>
+            <p className="mt-2 text-sm text-[var(--text-secondary)]">
+              JPG:lossy compression,PNG: limited compression, WebP: modern optimized format
+            </p>
+          </div>
+          <div className="rounded-2xl border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] p-5">
+            <h3 className="font-semibold">Free</h3>
+            <p className="mt-2 text-sm text-[var(--text-secondary)]">
+              No sign-up, no limits for basic use.
+            </p>
+          </div>
+        </div>
+
         {/* FAQ */}
         <section className="pt-10 space-y-4">
           <h2 className="text-2xl font-bold">
@@ -310,7 +316,94 @@ export default function ImageCompressorPage() {
           </div>
         </section>
 
+        <section className="max-w-4xl mt-20 space-y-8">
+          <h2 className="text-2xl font-bold">
+            Compress Images Online  Fast & Secure
+          </h2>
+
+          <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+            Our Image Compressor allows you to compress JPG, PNG, and WebP images instantly in your browser. Your file is never uploaded to any
+            server. Everything happens locally on your device.
+          </p>
+
+          <h3 className="text-xl font-semibold">How to Compress Images</h3>
+
+          <ul className="list-disc pl-6 text-sm text-[var(--text-secondary)] space-y-2">
+            <li>Upload your image file (JPG, PNG, WebP).</li>
+            <li>Select compression level.</li>
+            <li>Download the compressed image.</li>
+          </ul>
+        </section>
+
+        <section className="mt-16">
+          <h3 className="text-xl font-semibold mb-4">Related Images Tools</h3>
+
+          <div className="grid md:grid-cols-3 gap-4">
+            <Link
+              href="/tools/png-to-jpg"
+              className="text-[var(--accent)] hover:underline"
+            >
+              PNG to JPG Converter
+            </Link>
+            <Link
+              href="/tools/jpg-to-webp"
+              className="text-[var(--accent)] hover:underline"
+            >
+              JPG to WebP Converter
+            </Link>
+            <Link
+              href="/tools/image-resizer"
+              className="text-[var(--accent)] hover:underline"
+            >
+              Image Resizer
+            </Link>
+          </div>
+        </section>
       </section>
+
+    
+      
+      {/* FAQ SCHEMA (SEO) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: FAQS.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.a,
+              },
+            })),
+          }),
+        }}
+      />
+
+       {/* SOFTWARE APPLICATION SCHEMA */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "Image Compressor Online Tool",
+            applicationCategory: "UtilityApplication",
+            operatingSystem: "Any",
+            url: "https://aitechtactics.com/tools/image-compressor",
+            description:
+              "Compress images online for free. Reduce JPG, PNG, and WebP file size instantly without losing quality. Secure, fast, and works directly in your browser.",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
+          }),
+        }}
+      />
+
     </main>
   );
 }

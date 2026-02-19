@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "https://yourdomain.com";
+  const baseUrl = "https://aitechtactics.com";
 
   const staticRoutes = [
     "",

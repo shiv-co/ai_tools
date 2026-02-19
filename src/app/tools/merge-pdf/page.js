@@ -3,29 +3,30 @@
 import { useState } from "react";
 import { PDFDocument } from "pdf-lib";
 import { FaUpload } from "react-icons/fa";
+import Link from "next/link";
 import { useEffect } from "react";
+import { FaArrowCircleDown } from "react-icons/fa";
+import { FaArrowCircleUp } from "react-icons/fa";
+import { MdDeleteForever } from "react-icons/md";
 
-
-  const faqs = [
+const FAQS = [
   {
     q: "Is this Merge PDF tool free?",
-    a: "Yes. This PDF merger is completely free and requires no sign-up."
+    a: "Yes. This PDF merger is completely free and requires no sign-up.",
   },
   {
     q: "Are my PDF files uploaded?",
-    a: "No. All PDF processing happens locally in your browser. Your files never leave your device."
+    a: "No. All PDF processing happens locally in your browser. Your files never leave your device.",
   },
   {
     q: " Can I reorder PDFs before merging?",
-    a: "Yes. You can change the order using the arrows before merging."
+    a: "Yes. You can change the order using the arrows before merging.",
   },
   {
     q: "Is there any file size limit?",
-    a: "  There is no fixed limit, but very large files may take longer to process."
+    a: "  There is no fixed limit, but very large files may take longer to process.",
   },
- 
 ];
-
 
 export default function MergePdfPage() {
   const [files, setFiles] = useState([]);
@@ -190,19 +191,19 @@ export default function MergePdfPage() {
                         onClick={() => moveFile(index, index - 1)}
                         className="text-[var(--accent)]"
                       >
-                        ↑
+                        <FaArrowCircleUp />
                       </button>
                       <button
                         onClick={() => moveFile(index, index + 1)}
                         className="text-[var(--accent)]"
                       >
-                        ↓
+                        <FaArrowCircleDown />
                       </button>
                       <button
                         onClick={() => removeFile(index)}
                         className="text-red-500"
                       >
-                        ✕
+                        <MdDeleteForever className="text-lg" size={25} />
                       </button>
                     </div>
                   </div>
@@ -246,72 +247,110 @@ export default function MergePdfPage() {
         {/* FAQ */}
 
         <div className="space-y-6">
-  <h2 className="text-2xl font-bold">
-    Frequently Asked Questions
-  </h2>
+          <h2 className="text-2xl font-bold">Frequently Asked Questions</h2>
 
-  <div className="space-y-3">
-    {faqs.map((item, index) => (
-      <details
-        key={index}
-        className="group rounded-xl border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] p-4"
-      >
-        <summary className="flex cursor-pointer items-center justify-between font-medium list-none">
-          {item.q}
-          <span className="transition-transform group-open:rotate-180">
-            ⌄
-          </span>
-        </summary>
+          <div className="space-y-3">
+            {FAQS.map((item, index) => (
+              <details
+                key={index}
+                className="group rounded-xl border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] p-4"
+              >
+                <summary className="flex cursor-pointer items-center justify-between font-medium list-none">
+                  {item.q}
+                  <span className="transition-transform group-open:rotate-180">
+                    ⌄
+                  </span>
+                </summary>
 
-        <p className="mt-3 text-sm text-[var(--text-secondary)] leading-relaxed">
-          {item.a}
-        </p>
-      </details>
-    ))}
-  </div>
-</div>
+                <p className="mt-3 text-sm text-[var(--text-secondary)] leading-relaxed">
+                  {item.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
 
+        <section className="max-w-4xl mt-20 space-y-8">
+          <h2 className="text-2xl font-bold">
+            Merge Pdf Online  Fast & Secure
+          </h2>
+
+          <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+            Our Merge PDF tool allows you to merge multiple PDF files into one document instantly in your browser. Your files are never uploaded to any
+            server. Everything happens locally on your device.
+          </p>
+
+          <h3 className="text-xl font-semibold">How to Merge PDFs</h3>
+
+          <ul className="list-disc pl-6 text-sm text-[var(--text-secondary)] space-y-2">
+            <li>Upload your PDF files.</li>
+            <li>Drag and drop to reorder them if needed.</li>
+            <li>Click Merge PDF Files to download the combined document.</li>
+          </ul>
+        </section>
+
+        <section className="mt-16">
+          <h3 className="text-xl font-semibold mb-4">Related Images Tools</h3>
+
+          <div className="grid md:grid-cols-3 gap-4">
+            <Link
+              href="/tools/compress-pdf"
+              className="text-[var(--accent)] hover:underline"
+            >
+              Compress PDF Online
+            </Link>
+            <Link
+              href="/tools/split-pdf"
+              className="text-[var(--accent)] hover:underline"
+            >
+              Split PDF Online
+            </Link>
+            <Link
+              href="/tools/reorder-pdf"
+              className="text-[var(--accent)] hover:underline"
+            >
+              Reorder PDF Pages
+            </Link>
+          </div>
+        </section>
       </section>
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "Is this Merge PDF tool free?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Yes, this Merge PDF tool is completely free and does not require registration.",
-                },
+            mainEntity: FAQS.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.a,
               },
-              {
-                "@type": "Question",
-                name: "Are my PDF files uploaded?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "No. All PDF files are processed locally in your browser.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Can I reorder PDFs before merging?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Yes, you can reorder PDF files before merging them.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Is there a file size limit?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "There is no fixed size limit, but large PDFs may take longer to process.",
-                },
-              },
-            ],
+            })),
+          }),
+        }}
+      />
+
+      {/* SOFTWARE APPLICATION SCHEMA */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "Merge PDF Online Tool",
+            applicationCategory: "UtilityApplication",
+            operatingSystem: "Any",
+            url: "https://aitechtactics.com/tools/merge-pdf",
+            description:
+              "Merge multiple PDF files online for free. No registration required and all processing happens locally in your browser.",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
           }),
         }}
       />

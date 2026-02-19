@@ -371,7 +371,7 @@ export default function ToolsPage() {
         "position": index + 1,
         "name": tool.title,
         // In a real implementation, you would replace 'yourdomain.com' with your actual domain name
-        "url": `https://yourdomain.com${tool.href}`,   
+        "url": `https://aitechtactics.com${tool.href}`,   
       })),
     }),
   }}

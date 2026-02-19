@@ -146,7 +146,6 @@ export default function SplitPdfPage() {
   return (
     <main className="min-h-screen bg-[var(--bg)] text-[var(--text-primary)]">
       <section className="mx-auto max-w-4xl px-4 py-5 md:py-10 space-y-10">
-
         {/* HEADER */}
         <div>
           <h1 className=" text-2xl md:text-3xl font-bold md:font-extrabold">
@@ -181,10 +180,7 @@ export default function SplitPdfPage() {
         {previews.length > 0 && (
           <>
             <div className="flex justify-between items-center">
-              <h2 className="text-xl font-semibold">
-                Select Pages to Extract
-              </h2>
-
+              <h2 className="text-xl font-semibold">Select Pages to Extract</h2>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
@@ -205,35 +201,28 @@ export default function SplitPdfPage() {
                     onChange={() =>
                       setPreviews((prev) =>
                         prev.map((p, i) =>
-                          i === idx
-                            ? { ...p, selected: !p.selected }
-                            : p
-                        )
+                          i === idx ? { ...p, selected: !p.selected } : p,
+                        ),
                       )
                     }
                     className="absolute top-2 left-2 w-5 h-5 accent-[var(--accent)]"
                   />
 
-                  <p className="text-center text-sm mt-2">
-                    Page {page.page}
-                  </p>
-                  
+                  <p className="text-center text-sm mt-2">Page {page.page}</p>
                 </div>
               ))}
-              
             </div>
-            
-              <button
-                onClick={splitPdf}
-                className="rounded-xl bg-[var(--accent)] px-6 py-2 text-white font-semibold"
-              >
-                Split PDF
-              </button>
+
+            <button
+              onClick={splitPdf}
+              className="rounded-xl bg-[var(--accent)] px-6 py-2 text-white font-semibold"
+            >
+              Split PDF
+            </button>
           </>
         )}
 
-        
-         {/* INFO */}
+        {/* INFO */}
         <div className="grid gap-6 sm:grid-cols-3 mt-10">
           <div className="rounded-2xl border bg-[var(--surface-opacity-5)] p-5">
             <h3 className="font-semibold">Easy and Quick</h3>
@@ -256,116 +245,119 @@ export default function SplitPdfPage() {
         </div>
 
         {/* FAQ */}
-       {/* FAQ */}
-<div className="space-y-6 mt-10">
-  <h2 className="text-xl md:text-2xl font-bold">
-    Frequently Asked Questions
-  </h2>
+        {/* FAQ */}
+        <div className="space-y-6 mt-10">
+          <h2 className="text-xl md:text-2xl font-bold">
+            Frequently Asked Questions
+          </h2>
 
-  <div className="space-y-3">
-    {faqs.map((item, index) => (
-      <details
-        key={index}
-        className="group rounded-xl border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] p-4"
-      >
-        <summary className="flex cursor-pointer items-center justify-between font-medium list-none">
-          {item.q}
-          <span className="transition-transform group-open:rotate-180">
-            ⌄
-          </span>
-        </summary>
+          <div className="space-y-3">
+            {faqs.map((item, index) => (
+              <details
+                key={index}
+                className="group rounded-xl border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] p-4"
+              >
+                <summary className="flex cursor-pointer items-center justify-between font-medium list-none">
+                  {item.q}
+                  <span className="transition-transform group-open:rotate-180">
+                    ⌄
+                  </span>
+                </summary>
 
-        <p className="mt-3 text-sm text-[var(--text-secondary)] leading-relaxed">
-          {item.a}
-        </p>
-      </details>
-    ))}
-  </div>
-</div>
+                <p className="mt-3 text-sm text-[var(--text-secondary)] leading-relaxed">
+                  {item.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
 
-{/* ================= SEO CONTENT ================= */}
-<section className="max-w-4xl mt-20 space-y-8">
-  <h2 className="text-2xl font-bold">
-    Split PDF Online – Fast & Secure
-  </h2>
+        {/* ================= SEO CONTENT ================= */}
+        <section className="max-w-4xl mt-20 space-y-8">
+          <h2 className="text-2xl font-bold">
+            Split PDF Online – Fast & Secure
+          </h2>
 
-  <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-    Our Split PDF tool allows you to extract specific pages from a PDF file
-    instantly in your browser. Your file is never uploaded to any server.
-    Everything happens locally on your device.
-  </p>
+          <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+            Our Split PDF tool allows you to extract specific pages from a PDF
+            file instantly in your browser. Your file is never uploaded to any
+            server. Everything happens locally on your device.
+          </p>
 
-  <h3 className="text-xl font-semibold">
-    How to Split a PDF File
-  </h3>
+          <h3 className="text-xl font-semibold">How to Split a PDF File</h3>
 
-  <ul className="list-disc pl-6 text-sm text-[var(--text-secondary)] space-y-2">
-    <li>Upload your PDF file.</li>
-    <li>Enter page range like 1-3,5,8-10.</li>
-    <li>Click Split PDF.</li>
-    <li>Download instantly.</li>
-  </ul>
-</section>
+          <ul className="list-disc pl-6 text-sm text-[var(--text-secondary)] space-y-2">
+            <li>Upload your PDF file.</li>
+            <li>Enter page range like 1-3,5,8-10.</li>
+            <li>Click Split PDF.</li>
+            <li>Download instantly.</li>
+          </ul>
+        </section>
 
+        <section className="mt-16">
+          <h3 className="text-xl font-semibold mb-4">Related PDF Tools</h3>
 
-
-<section className="mt-16">
-  <h3 className="text-xl font-semibold mb-4">
-    Related PDF Tools
-  </h3>
-
-  <div className="grid md:grid-cols-3 gap-4">
-    <Link href="/tools/merge-pdf" className="text-[var(--accent)] hover:underline">
-      Merge PDF Files
-    </Link>
-    <Link href="/tools/compress-pdf" className="text-[var(--accent)] hover:underline">
-      Compress PDF Online
-    </Link>
-    <Link href="/tools/reorder-pdf" className="text-[var(--accent)] hover:underline">
-      Reorder PDF Pages
-    </Link>
-  </div>
-</section>
-
-
-
-        {/* FAQ SCHEMA */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              mainEntity: faqs.map((item) => ({
-                "@type": "Question",
-                name: item.q,
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: item.a,
-                },
-              })),
-            }),
-          }}
-        />
-        <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      name: "Split PDF Online Tool",
-      applicationCategory: "UtilityApplication",
-      operatingSystem: "Any",
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "USD"
-      }
-    }),
-  }}
-/>
-
+          <div className="grid md:grid-cols-3 gap-4">
+            <Link
+              href="/tools/merge-pdf"
+              className="text-[var(--accent)] hover:underline"
+            >
+              Merge PDF Files
+            </Link>
+            <Link
+              href="/tools/compress-pdf"
+              className="text-[var(--accent)] hover:underline"
+            >
+              Compress PDF Online
+            </Link>
+            <Link
+              href="/tools/reorder-pdf"
+              className="text-[var(--accent)] hover:underline"
+            >
+              Reorder PDF Pages
+            </Link>
+          </div>
+        </section>
       </section>
+
+      {/* FAQ SCHEMA */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((item) => ({
+              "@type": "Question",
+              name: item.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: item.a,
+              },
+            })),
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "Split PDF Online Tool",
+            applicationCategory: "UtilityApplication",
+            operatingSystem: "Any",
+            url: "https://aitechtactics.com/tools/split-pdf",
+            description:
+              "Split PDF files online for free. Extract specific pages from a PDF in your browser.",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
+          }),
+        }}
+      />
     </main>
   );
 }

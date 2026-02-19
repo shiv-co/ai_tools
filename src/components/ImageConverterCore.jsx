@@ -85,12 +85,12 @@ export default function ImageConverterCore({
 
   return (
     <main className="min-h-screen bg-[var(--bg)] text-[var(--text-primary)]">
-      <section className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-20 space-y-12">
+      <section className="mx-auto max-w-4xl px-4 md:px-6 lg:px-8 py-5 md:py-10 space-y-10">
 
         {/* HEADER */}
-        <div className="max-w-3xl space-y-4">
-          <h1 className="text-3xl sm:text-4xl font-extrabold">{title}</h1>
-          <p className="text-[var(--text-secondary)]">{description}</p>
+        <div className="max-w-3xl space-y-3">
+          <h1 className="text-2xl md:text-4xl font-bold md:font-extrabold">{title}</h1>
+          <p className="text-[var(--text-secondary)] text-xs md:text-sm">{description}</p>
         </div>
 
         {/* UPLOAD */}

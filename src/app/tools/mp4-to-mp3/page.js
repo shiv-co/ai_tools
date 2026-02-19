@@ -1,6 +1,25 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
+const FAQS = [
+  {
+    q: "Is this MP4 to MP3 converter free?",
+    a: "Yes, this MP4 to MP3 converter is completely free and does not require sign-up.",
+  },
+  {
+    q: "Are my MP4 files uploaded?",
+    a: "No. All MP4 processing happens locally in your browser. Your files never leave your device.",
+  },
+  {
+    q: "What audio quality should I choose?",
+    a: "Choose a higher audio quality (e.g., 192 kbps) for better sound, or a lower quality (e.g., 128 kbps) for smaller file size.",
+  },
+  {
+    q: "Is there any file size limit?",
+    a: "  There is no fixed limit, but very large files may take longer to process.",
+  },
+];
 
 export default function Mp4ToMp3Page() {
   const [file, setFile] = useState(null);
@@ -116,58 +135,7 @@ export default function Mp4ToMp3Page() {
     }
   };
 
-  <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Is this MP4 to MP3 converter free?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, this MP4 to MP3 converter is completely free and does not require sign-up."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are my files uploaded to a server?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. All conversions happen locally in your browser and files are never uploaded."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What audio quality should I choose?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "128 kbps is suitable for voice, 192 kbps offers balanced quality, and 320 kbps provides the highest audio quality."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is there a file size limit?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "There is no fixed file size limit, but large files may take longer depending on device performance."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does this tool work on mobile devices?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, the tool works on mobile devices, though conversion speed may vary."
-          }
-        }
-      ]
-    }),
-  }}
-/>
-
+ 
 
   return (
     
@@ -282,57 +250,212 @@ export default function Mp4ToMp3Page() {
 
           </div>
         </div>
-      {/* ================= FAQ ================= */}
-<section className="mt-20">
-  <div className="max-w-3xl space-y-6">
-    <h2 className="text-2xl sm:text-3xl font-bold">
-      Frequently Asked Questions
-    </h2>
 
-    <div className="space-y-4">
-      <div className="rounded-xl border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] p-5">
-        <h3 className="font-semibold">Is this MP4 to MP3 converter free?</h3>
-        <p className="mt-2 text-sm text-[var(--text-secondary)]">
-          Yes. This tool is completely free to use with no sign-up required.
-        </p>
-      </div>
+        <section className="mt-24 space-y-10 max-w-4xl">
+  <h2 className="text-2xl sm:text-3xl font-bold">
+    Convert MP4 to MP3 Online for Free
+  </h2>
 
-      <div className="rounded-xl border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] p-5">
-        <h3 className="font-semibold">Are my files uploaded to a server?</h3>
-        <p className="mt-2 text-sm text-[var(--text-secondary)]">
-          No. All conversions happen directly in your browser. Your files never
-          leave your device.
-        </p>
-      </div>
+  <p className="text-[var(--text-secondary)] leading-relaxed">
+    MP4 to MP3 conversion allows you to extract audio from video files quickly and easily.
+    Whether you want music from a video, a podcast recording, a lecture,
+    or background audio from a presentation, converting MP4 to MP3 helps you
+    save only the sound in a lightweight and portable format.
+  </p>
 
-      <div className="rounded-xl border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] p-5">
-        <h3 className="font-semibold">What audio quality should I choose?</h3>
-        <p className="mt-2 text-sm text-[var(--text-secondary)]">
-          128 kbps is good for voice, 192 kbps is balanced, and 320 kbps provides
-          the highest audio quality.
-        </p>
-      </div>
+  <p className="text-[var(--text-secondary)] leading-relaxed">
+    Our free MP4 to MP3 converter works directly in your browser. There is
+    no need to upload files to any server. This means your videos remain
+    completely private and secure while you extract audio instantly.
+  </p>
 
-      <div className="rounded-xl border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] p-5">
-        <h3 className="font-semibold">Is there a file size limit?</h3>
-        <p className="mt-2 text-sm text-[var(--text-secondary)]">
-          There is no fixed limit, but very large files may take longer depending
-          on your device performance.
-        </p>
-      </div>
+  <h3 className="text-xl font-semibold">
+    How to Convert MP4 to MP3
+  </h3>
 
-      <div className="rounded-xl border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] p-5">
-        <h3 className="font-semibold">Does this work on mobile?</h3>
-        <p className="mt-2 text-sm text-[var(--text-secondary)]">
-          Yes, but conversions may be slower on low-end mobile devices due to
-          limited memory.
-        </p>
-      </div>
-    </div>
-  </div>
+  <ol className="list-decimal pl-6 space-y-3 text-[var(--text-secondary)] leading-relaxed">
+    <li>Click the upload button and select your MP4 video file.</li>
+    <li>Wait for the audio extraction process to complete.</li>
+    <li>Download your MP3 audio file instantly.</li>
+  </ol>
+
+  <p className="text-[var(--text-secondary)] leading-relaxed">
+    The process takes only seconds depending on the size of your video file.
+  </p>
+
+  <h2 className="text-2xl sm:text-3xl font-bold">
+    Why Convert MP4 to MP3?
+  </h2>
+
+  <p className="text-[var(--text-secondary)] leading-relaxed">
+    MP4 is a video format that contains both audio and visual content.
+    However, many users only need the audio portion. Converting MP4 to MP3
+    reduces file size and makes playback easier across devices.
+  </p>
+
+  <ul className="list-disc pl-6 space-y-3 text-[var(--text-secondary)] leading-relaxed">
+    <li>Extract music from videos</li>
+    <li>Save podcasts or interviews as audio files</li>
+    <li>Convert lectures for offline listening</li>
+    <li>Create audio clips for presentations</li>
+    <li>Reduce storage space by removing video</li>
+  </ul>
+
+  <h2 className="text-2xl sm:text-3xl font-bold">
+    100% Private MP4 to MP3 Conversion
+  </h2>
+
+  <p className="text-[var(--text-secondary)] leading-relaxed">
+    Many online converters upload your videos to remote servers.
+    This can pose privacy risks, especially if your content contains
+    sensitive information.
+  </p>
+
+  <p className="text-[var(--text-secondary)] leading-relaxed">
+    Our converter processes everything locally in your browser.
+    Your files are never uploaded, stored, or shared.
+    This ensures complete privacy and faster performance.
+  </p>
+
+  <h2 className="text-2xl sm:text-3xl font-bold">
+    Fast & High-Quality Audio Extraction
+  </h2>
+
+  <p className="text-[var(--text-secondary)] leading-relaxed">
+    The MP3 format is widely supported across devices including smartphones,
+    tablets, laptops, car audio systems, and music players.
+    It provides excellent sound quality while keeping file size small.
+  </p>
+
+  <p className="text-[var(--text-secondary)] leading-relaxed">
+    Our tool preserves high-quality audio during conversion,
+    ensuring clear sound output suitable for music, voice recordings,
+    and professional usage.
+  </p>
+
+  <h2 className="text-2xl sm:text-3xl font-bold">
+    No Installation Required
+  </h2>
+
+  <p className="text-[var(--text-secondary)] leading-relaxed">
+    You do not need to download or install any software.
+    The MP4 to MP3 converter works directly in your browser on:
+  </p>
+
+  <ul className="list-disc pl-6 space-y-3 text-[var(--text-secondary)] leading-relaxed">
+    <li>Windows</li>
+    <li>macOS</li>
+    <li>Linux</li>
+    <li>Android</li>
+    <li>iOS</li>
+  </ul>
+
+  <p className="text-[var(--text-secondary)] leading-relaxed">
+    Simply open the tool, upload your file, and download the MP3 audio.
+  </p>
+
+  <h2 className="text-2xl sm:text-3xl font-bold">
+    Frequently Asked Use Cases
+  </h2>
+
+  <p className="text-[var(--text-secondary)] leading-relaxed">
+    Students often convert recorded lectures into MP3 files for offline listening.
+    Content creators extract background music from their videos.
+    Professionals convert webinars into podcast-ready audio.
+  </p>
+
+  <p className="text-[var(--text-secondary)] leading-relaxed">
+    MP4 to MP3 conversion is one of the most commonly searched
+    video-to-audio tasks online, making it an essential productivity tool.
+  </p>
+
+  <h2 className="text-2xl sm:text-3xl font-bold">
+    Related Tools You May Like
+  </h2>
+
+  <div className="grid md:grid-cols-3 gap-4">
+    <Link className="text-[var(--accent)] hover:underline cursor-pointer" href="/tools/merge-pdf">Merge PDF files</Link>
+    <Link className="text-[var(--accent)] hover:underline cursor-pointer" href="/tools/compress-pdf">Compress PDF documents</Link>
+    <Link className="text-[var(--accent)] hover:underline cursor-pointer" href="/tools/jpg-to-pdf">Convert JPG to PDF</Link>
+    <Link className="text-[var(--accent)] hover:underline cursor-pointer" href="/tools/image-compressor">Image Compressor</Link>
+  </div>  
+ 
+
+  <p className="text-[var(--text-secondary)] leading-relaxed pb-4">
+    Explore more free browser-based tools designed to improve your workflow
+    and productivity.
+  </p>
 </section>
 
+      {/* ================= FAQ ================= */}
+ <div className="space-y-6">
+          <h2 className="text-2xl font-bold">Frequently Asked Questions</h2>
+
+          <div className="space-y-3">
+            {FAQS.map((item, index) => (
+              <details
+                key={index}
+                className="group rounded-xl border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] p-4"
+              >
+                <summary className="flex cursor-pointer items-center justify-between font-medium list-none">
+                  {item.q}
+                  <span className="transition-transform group-open:rotate-180">
+                    ⌄
+                  </span>
+                </summary>
+
+                <p className="mt-3 text-sm text-[var(--text-secondary)] leading-relaxed">
+                  {item.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+
       </section>
+
+
+
+ <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: FAQS.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.a,
+              },
+            })),
+          }),
+        }}
+      />
+
+      {/* SOFTWARE APPLICATION SCHEMA */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "MP4 to MP3 convertor Online ",
+            applicationCategory: "UtilityApplication",
+            operatingSystem: "Any",
+            url: "https://aitechtactics.com/tools/mp4-to-mp3",
+            description:
+              "Convert MP4 videos to MP3 audio files online for free. No registration required and all processing happens locally in your browser.",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
+          }),
+        }}
+      />
+
     </main>
   );
 }

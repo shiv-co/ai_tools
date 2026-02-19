@@ -12,14 +12,14 @@ export const metadata = {
     "change text case online",
   ],
   alternates: {
-    canonical: "https://yourdomain.com/tools/text-case-converter",
+    canonical: "https://aitechtactics.com/tools/text-case-converter",
   },
   openGraph: {
     title:
       "Text Case Converter Online – Uppercase, Lowercase, Title & Sentence Case",
     description:
       "Convert text to uppercase, lowercase, title case, or sentence case instantly. 100% free and secure.",
-    url: "https://yourdomain.com/tools/text-case-converter",
+    url: "https://aitechtactics.com/tools/text-case-converter",
     type: "website",
   },
   twitter: {

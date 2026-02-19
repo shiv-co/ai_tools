@@ -28,8 +28,8 @@ export default function Footer() {
             <h4 className="font-medium mb-3">Resources</h4>
             <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
               <li><a href="/tools">AI Tools</a></li>
-              <li><a href="/free-tools">Free Tools</a></li>
-              <li><a href="/blog">Blog</a></li>
+              {/* <li><a href="/free-tools">Free Tools</a></li> */}
+              <li><a href="/about">Blog</a></li>
               <li><a href="/comparisons">Comparisons</a></li>
             </ul>
           </div>

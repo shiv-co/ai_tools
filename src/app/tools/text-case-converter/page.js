@@ -188,23 +188,26 @@ export default function TextCaseConverterPage() {
   }}
 />
 
-      <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      name: "Split PDF Online Tool",
-      applicationCategory: "UtilityApplication",
-      operatingSystem: "Any",
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "USD"
-      }
-    }),
-  }}
-/>
+ <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "Text Case Converter Online",
+            applicationCategory: "UtilityApplication",
+            operatingSystem: "Any",
+            url: "https://aitechtactics.com/tools/text-case-converter",
+            description:
+              "Convert text to uppercase, lowercase, title case, or sentence case instantly in your browser.",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
+          }),
+        }}
+      />
 
     </main>
   );

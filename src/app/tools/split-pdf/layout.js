@@ -10,13 +10,13 @@ export const metadata = {
     "separate pdf pages",
   ],
   alternates: {
-    canonical: "https://yourdomain.com/tools/split-pdf",
+    canonical: "https://aitechtactics.com/tools/split-pdf",
   },
   openGraph: {
     title: "Split PDF Online Free",
     description:
       "Extract pages from PDF instantly in your browser. 100% private and secure.",
-    url: "https://yourdomain.com/tools/split-pdf",
+    url: "https://aitechtactics.com/tools/split-pdf",
     type: "website",
   },
 };

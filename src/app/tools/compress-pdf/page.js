@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { PDFDocument } from "pdf-lib";
 import { FaUpload } from "react-icons/fa";
+import Link from "next/link";
 
  const faqs = [
   {
@@ -178,9 +179,56 @@ export default function CompressPdfPage() {
   </div>
 </div>
 
+  {/* ================= SEO CONTENT ================= */}
+        <section className="max-w-4xl mt-20 space-y-8">
+          <h2 className="text-2xl font-bold">
+            Compress PDF Online Free – Fast & Secure
+          </h2>
+
+          <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+            Our PDF compressor allows you to reduce PDF file sizes instantly in your browser. Your file is never uploaded to any
+            server. Everything happens locally on your device.Compress PDF online for free. Reduce PDF file size instantly without losing quality. Secure, private and works directly in your browser.
+          </p>
+
+          <h3 className="text-xl font-semibold">How to Compress PDF</h3>
+
+          <ul className="list-disc pl-6 text-sm text-[var(--text-secondary)] space-y-2">
+            <li>Upload your PDF file.</li>
+            <li>Select compression level.</li>
+            <li>Download the compressed PDF file.</li>
+          </ul>
+        </section>
+
+        <section className="mt-16">
+          <h3 className="text-xl font-semibold mb-4">Related PDF Tools</h3>
+
+          <div className="grid md:grid-cols-3 gap-4">
+            <Link
+              href="/tools/split-pdf"
+              className="text-[var(--accent)] hover:underline"
+            >
+              Split PDF Tool
+            </Link>
+            <Link
+              href="/tools/merge-pdf"
+              className="text-[var(--accent)] hover:underline"
+            >
+              Merge PDF Tool
+            </Link>
+            <Link
+              href="/tools/pdf-to-jpg"
+              className="text-[var(--accent)] hover:underline"
+            >
+              PDF to JPG Converter
+            </Link>
+          </div>
+        </section>
+      </section>
+       
+
 
       
-      </section>
+    
 
       {/* FAQ SCHEMA */}
 <script
@@ -200,6 +248,28 @@ export default function CompressPdfPage() {
     })
   }}
 />
+
+  {/* SOFTWARE APPLICATION SCHEMA */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "Compress PDF Online Tool",
+            applicationCategory: "UtilityApplication",
+            operatingSystem: "Any",
+            url: "https://aitechtactics.com/tools/compress-pdf",
+            description:
+              "Compress PDF online for free. Reduce PDF file size instantly without losing quality. Secure, private and works directly in your browser.",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
+          }),
+        }}
+      />
 
     </main>
   );

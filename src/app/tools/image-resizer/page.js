@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";     
 
 /* ===== Presets ===== */
 const PRESETS = {
@@ -132,23 +133,7 @@ export default function ImageResizerPage() {
     setResult(output);
   };
 
-  <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": FAQS.map((faq) => ({
-        "@type": "Question",
-        "name": faq.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.a,
-        },
-      })),
-    }),
-  }}
-/>
+ 
 
 
   return (
@@ -332,10 +317,94 @@ export default function ImageResizerPage() {
     ))}
   </div>
 </section>
+ <section className="max-w-4xl mt-20 space-y-8">
+          <h2 className="text-2xl font-bold">
+            Resize Images Online  Fast & Secure
+          </h2>
+
+          <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+            Our Image Resizer allows you to resize JPG, PNG, and WebP images instantly in your browser. Your file is never uploaded to any
+            server. Everything happens locally on your device.
+          </p>
+
+          <h3 className="text-xl font-semibold">How to Resize Images</h3>
+
+          <ul className="list-disc pl-6 text-sm text-[var(--text-secondary)] space-y-2">
+            <li>Upload your image file (JPG, PNG, WebP).</li>
+            <li>Select new dimensions (pixels, percentage, cm or inches).</li>
+            <li>Download the resized image.</li>
+          </ul>
+        </section>
+
+        <section className="mt-16">
+          <h3 className="text-xl font-semibold mb-4">Related Images Tools</h3>
+
+          <div className="grid md:grid-cols-3 gap-4">
+            <Link
+              href="/tools/png-to-jpg"
+              className="text-[var(--accent)] hover:underline"
+            >
+              PNG to JPG Converter
+            </Link>
+            <Link
+              href="/tools/jpg-to-webp"
+              className="text-[var(--accent)] hover:underline"
+            >
+              JPG to WebP Converter
+            </Link>
+            <Link
+              href="/tools/image-comppressor"
+              className="text-[var(--accent)] hover:underline"
+            >
+              Image Compressor
+            </Link>
+          </div>
+        </section>
 
 
 
       </section>
+
+       <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": FAQS.map((faq) => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.a,
+        },
+      })),
+    }),
+  }}
+/>
+
+  {/* SOFTWARE APPLICATION SCHEMA */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "Image Resizer Online Tool",
+            applicationCategory: "UtilityApplication",
+            operatingSystem: "Any",
+            url: "https://aitechtactics.com/tools/image-resizer",
+            description:
+              "Resize images online for free. Change image dimensions by pixels, percentage, cm or inches. Fast, secure and works directly in your browser.",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
+          }),
+        }}
+      />
+
     </main>
   );
 }

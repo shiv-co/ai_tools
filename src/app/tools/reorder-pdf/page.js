@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { PDFDocument } from "pdf-lib";
 import { FaUpload } from "react-icons/fa";
+import Link from "next/link";
+import Script from "next/script";
 
 const faqs = [
   {
@@ -313,8 +315,57 @@ export default function ReorderPdfPage() {
             ))}
           </div>
         </div>
+
+         <section className="max-w-4xl mt-20 space-y-8">
+          <h2 className="text-2xl font-bold">
+            Re-order PDF Online – Fast & Secure
+          </h2>
+
+          <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+            Our Reorder PDF tool allows you to rearrange pages in a PDF file instantly in your browser. Your file is never uploaded to any
+            server. Everything happens locally on your device.
+          </p>
+
+          <h3 className="text-xl font-semibold">How to Reorder PDF Pages</h3>
+
+          <ul className="list-disc pl-6 text-sm text-[var(--text-secondary)] space-y-2">
+            <li>Upload your PDF file.</li>
+            <li>Drag and drop pages to reorder them.</li>
+            <li>Click Download Reordered PDF.</li>
+          </ul>
+        </section>
+
+          <section className="mt-16">
+          <h3 className="text-xl font-semibold mb-4">Related PDF Tools</h3>
+
+          <div className="grid md:grid-cols-3 gap-4">
+            <Link
+              href="/tools/merge-pdf"
+              className="text-[var(--accent)] hover:underline"
+            >
+              Merge PDF Files
+            </Link>
+            <Link
+              href="/tools/compress-pdf"
+              className="text-[var(--accent)] hover:underline"
+            >
+              Compress PDF Online
+            </Link>
+            <Link
+              href="/tools/split-pdf"
+              className="text-[var(--accent)] hover:underline"
+            >
+              Split PDF Pages
+            </Link>
+          </div>
+        </section>
+
+
+
       </section>
+
       <script
+        id="reorder-pdf-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -328,6 +379,28 @@ export default function ReorderPdfPage() {
           }),
         }}
       />
+       <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "Reorder PDF Pages Online Free",
+            applicationCategory: "UtilityApplication",
+            operatingSystem: "Any",
+            url: "https://aitechtactics.com/tools/reorder-pdf",
+            description:
+              "Reorder PDF pages online for free. Drag and drop to change page order instantly in your browser.",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
+          }),
+        }}
+      />
+
+
     </main>
   );
 }
