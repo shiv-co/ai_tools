@@ -41,7 +41,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body className="bg-[var(--bg)] text-[var(--text-primary)] transition-colors duration-300">
 
         {/* Google AdSense Script */}

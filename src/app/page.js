@@ -1,149 +1,138 @@
+import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   return (
-    <main className="bg-[var(--bg)] text-[var(--text-primary)]">
+    <main className="relative overflow-hidden bg-[var(--bg)] text-[var(--text-primary)]">
 
-      {/* ================= HERO SECTION ================= */}
-      <section className="px-4 sm:px-6 lg:px-8 pt-10 sm:pt-16 max-w-7xl mx-auto">
-        <div className="flex flex-col gap-6 max-w-3xl">
-          <div className="inline-flex items-center gap-2 text-sm text-[var(--accent)] font-medium">
-            🔥 Hot Tool
-          </div>
+      {/* ================= BACKGROUND EFFECT ================= */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[var(--accent-opacity-10)] blur-3xl rounded-full opacity-40 animate-pulse" />
+      </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-            Discover Free AI Tools That Can
-            <span className="block text-[var(--accent)]">
-              Boost Your Productivity
+      {/* ================= HERO ================= */}
+      <section className="px-4 sm:px-6 lg:px-8 pt-20 pb-16 max-w-7xl mx-auto">
+        <div className="flex flex-col items-center text-center gap-6 max-w-4xl mx-auto">
+
+          <span className="px-4 py-1 rounded-full text-xs font-semibold bg-[var(--accent-opacity-10)] text-[var(--accent)] tracking-wider">
+            🚀 All-in-One Online Tools Platform
+          </span>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+            Powerful Online Tools.
+            <span className="block bg-gradient-to-r from-[var(--accent)] to-blue-500 bg-clip-text text-transparent">
+              Zero Installation Required.
             </span>
           </h1>
 
-          <p className="text-[var(--text-secondary)] text-base sm:text-lg">
-            Curated AI tools for students, creators, developers and businesses.
-            Save time, work smarter and grow faster.
+          <p className="text-lg sm:text-xl text-[var(--text-secondary)] max-w-2xl">
+            Free PDF, Image, Text, Media and AI tools built for speed,
+            privacy, and productivity. Everything works directly in your browser.
           </p>
 
-          <div className="flex items-center gap-4">
-            <button className="px-6 py-3 rounded-lg bg-[var(--accent)] text-white font-medium hover:opacity-90 transition">
+          <div className="flex flex-wrap justify-center gap-4 pt-4">
+            <Link
+              href="/tools"
+              className="px-8 py-4 rounded-xl bg-[var(--accent)] text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
+            >
               Explore Tools →
-            </button>
+            </Link>
 
             <ThemeToggle />
+          </div>
+
+          {/* Trust Badges */}
+          <div className="flex flex-wrap justify-center gap-6 pt-6 text-sm text-[var(--text-secondary)]">
+            <span>🔒 100% Private</span>
+            <span>⚡ Instant Processing</span>
+            <span>💸 Free Forever</span>
           </div>
         </div>
       </section>
 
-      {/* ================= FEATURED TOOLS ================= */}
-      <section className="mt-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <h2 className="text-2xl font-semibold mb-6">
-          Featured AI Tools
+      {/* ================= FEATURED CATEGORIES ================= */}
+      <section className="px-4 sm:px-6 lg:px-8 py-20 max-w-7xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-12">
+          Explore Our Most Popular Tool Categories
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
-            "AI Resume Builder",
-            "AI Caption Generator",
-            "AI Prompt Generator",
-          ].map((tool) => (
-            <div
-              key={tool}
-              className="bg-[var(--surface)] border border-[var(--border)] rounded-xl p-6 hover:shadow-md transition"
-            >
-              <span className="text-xs text-[var(--accent)] font-medium">
-                Free Tool
-              </span>
-
-              <h3 className="mt-2 font-semibold text-lg">
-                {tool}
-              </h3>
-
-              <p className="mt-2 text-sm text-[var(--text-secondary)]">
-                Generate high-quality results using AI in seconds.
-              </p>
-
-              <button className="mt-4 text-sm font-medium text-[var(--accent)]">
-                Use Tool →
-              </button>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ================= POPULAR TOOLS ================= */}
-      <section className="mt-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <h2 className="text-2xl font-semibold mb-6">
-          Popular Tools
-        </h2>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {[
-            "Chatbot AI",
-            "AI Image Generator",
-            "AI Email Writer",
-            "AI Code Helper",
+            { title: "PDF Tools", desc: "Split, merge, reorder and convert PDFs.", link: "/tools/split-pdf" },
+            { title: "Image Tools", desc: "Compress, resize and convert images.", link: "/tools/image-compressor" },
+            { title: "Text Tools", desc: "Word counter and formatting tools.", link: "/tools/word-counter" },
+            { title: "AI Tools", desc: "Resume builder and AI productivity tools.", link: "/tools/ai-resume-builder" }
           ].map((item) => (
-            <div
-              key={item}
-              className="bg-[var(--surface)] border border-[var(--border)] rounded-lg p-4 text-center text-sm font-medium hover:bg-[var(--border)] transition"
+            <Link
+              key={item.title}
+              href={item.link}
+              className="group relative flex flex-col rounded-2xl border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-opacity-60)] hover:shadow-lg hover:shadow-[var(--accent-opacity-10)] backdrop-blur"
             >
-              {item}
+              <h3 className="text-xl font-semibold group-hover:text-[var(--accent)] transition">
+                {item.title}
+              </h3>
+              <p className="mt-3 text-sm text-[var(--text-secondary)]">
+                {item.desc}
+              </p>
+              <span className="mt-5 inline-block text-sm font-medium text-[var(--accent)]">
+                Explore →
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ================= WHY CHOOSE US ================= */}
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-[var(--surface-opacity-5)]">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-10">
+            Why Choose AI Tech Tactics?
+          </h2>
+
+          <div className="grid sm:grid-cols-3 gap-10">
+            <div className="p-6 rounded-2xl hover:shadow-lg transition">
+              <div className="text-4xl mb-4">⚡</div>
+              <h3 className="font-semibold text-lg">Lightning Fast</h3>
+              <p className="text-sm text-[var(--text-secondary)] mt-2">
+                All tools run instantly in your browser without server delays.
+              </p>
             </div>
-          ))}
+
+            <div className="p-6 rounded-2xl hover:shadow-lg transition">
+              <div className="text-4xl mb-4">🔐</div>
+              <h3 className="font-semibold text-lg">Fully Private</h3>
+              <p className="text-sm text-[var(--text-secondary)] mt-2">
+                Your files never leave your device. No uploads. No storage.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl hover:shadow-lg transition">
+              <div className="text-4xl mb-4">📈</div>
+              <h3 className="font-semibold text-lg">Built for Productivity</h3>
+              <p className="text-sm text-[var(--text-secondary)] mt-2">
+                Designed to help students, creators, and professionals work smarter.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ================= LATEST ARTICLES ================= */}
-      <section className="mt-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <h2 className="text-2xl font-semibold mb-6">
-          Latest Articles
+      {/* ================= CTA ================= */}
+      <section className="px-4 sm:px-6 lg:px-8 py-24 text-center">
+        <h2 className="text-3xl font-bold">
+          Ready to Boost Your Productivity?
         </h2>
 
-        <div className="flex flex-col gap-6">
-          {[1, 2, 3].map((post) => (
-            <article
-              key={post}
-              className="flex flex-col sm:flex-row gap-4 bg-[var(--surface)] border border-[var(--border)] rounded-xl p-4"
-            >
-              <div className="sm:w-48 h-32 bg-[var(--border)] rounded-lg" />
-
-              <div className="flex-1">
-                <span className="text-xs text-[var(--text-secondary)]">
-                  AI Tools • 2 days ago
-                </span>
-
-                <h3 className="mt-1 font-semibold text-lg">
-                  Best Free AI Tools You Should Try in 2026
-                </h3>
-
-                <p className="mt-1 text-sm text-[var(--text-secondary)]">
-                  A curated list of powerful AI tools that can help you save time and improve productivity.
-                </p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* ================= NEWSLETTER ================= */}
-      <section className="mt-24 mb-24 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto text-center">
-        <h2 className="text-2xl font-semibold">
-          Don’t Want to Miss New AI Tools?
-        </h2>
-
-        <p className="mt-2 text-[var(--text-secondary)]">
-          Get weekly updates on the latest and best AI tools.
+        <p className="mt-4 text-[var(--text-secondary)]">
+          Start using our free tools today — no registration required.
         </p>
 
-        <form className="mt-6 flex flex-col sm:flex-row gap-3">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="flex-1 px-4 py-3 rounded-lg border border-[var(--border)] bg-[var(--surface)] outline-none"
-          />
-          <button className="px-6 py-3 rounded-lg bg-[var(--accent)] text-white font-medium">
-            Subscribe
-          </button>
-        </form>
+        <Link
+          href="/tools"
+          className="mt-8 inline-block px-10 py-4 rounded-xl bg-[var(--accent)] text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
+        >
+          Get Started →
+        </Link>
       </section>
 
     </main>

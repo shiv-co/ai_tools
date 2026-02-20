@@ -20,8 +20,8 @@ export default function ToolCard({ tool }) {
             pricing === "Free"
               ? "bg-green-500/10 text-green-600 dark:text-green-400"
               : pricing === "Paid"
-              ? "bg-[var(--accent-opacity-10)] text-[var(--accent)]"
-              : "bg-[var(--surface-opacity-10)] text-[var(--text-secondary)]"
+                ? "bg-[var(--accent-opacity-10)] text-[var(--accent)]"
+                : "bg-[var(--surface-opacity-10)] text-[var(--text-secondary)]"
           }`}
         >
           {pricing}

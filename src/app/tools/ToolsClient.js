@@ -173,12 +173,12 @@ const toolGroups = [
     description:
       "AI-powered productivity and writing tools.",
     tools: [
-      {
-        title: "AI Resume Builder",
-        href: "/tools/ai-resume-builder",
-        icon: ai_resume,
-        description: "Create professional, ATS-friendly resumes with AI."
-      },
+      // {
+      //   title: "AI Resume Builder",
+      //   href: "/tools/ai-resume-builder",
+      //   icon: ai_resume,
+      //   description: "Create professional, ATS-friendly resumes with AI."
+      // },
       {
         title: "AI Tools for Students",
         href: "/tools/ai-tools-for-students",
