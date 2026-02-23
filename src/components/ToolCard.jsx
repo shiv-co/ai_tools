@@ -5,7 +5,9 @@ export default function ToolCard({ tool }) {
 
   return (
     <Link
-      href={`/tools/${slug}`}
+      href={`${slug}`}
+      target="_blank"
+      rel="noopener noreferrer"
       className="group relative flex flex-col rounded-2xl border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-opacity-60)] hover:shadow-lg hover:shadow-[var(--accent-opacity-10)] backdrop-blur"
     >
       {/* Icon/Badge */}

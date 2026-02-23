@@ -112,7 +112,7 @@ const toolsBySubcategory = {
       useCase: "Email Writing",
       category: "Productivity",
       pricing: "Paid",
-      slug: "superhuman-ai",
+      slug: "https://superhuman.com/products/mail",
       icon: "⚡",
     },
   ],
@@ -124,7 +124,7 @@ const toolsBySubcategory = {
       useCase: "Customer Support",
       category: "Chatbot",
       pricing: "Free",
-      slug: "chatgpt",
+      slug: "https://chat.openai.com/",
       icon: "💬",
     },
     {
@@ -134,7 +134,7 @@ const toolsBySubcategory = {
       useCase: "Customer Support",
       category: "Chatbot",
       pricing: "Paid",
-      slug: "intercom",
+      slug: "https://www.intercom.com/",
       icon: "💬",
     },
     {
@@ -144,7 +144,7 @@ const toolsBySubcategory = {
       useCase: "Sales",
       category: "Chatbot",
       pricing: "Paid",
-      slug: "drift",
+      slug: "https://www.spendflo.com/vendors/drift",
       icon: "🤖",
     },
     {
@@ -154,7 +154,7 @@ const toolsBySubcategory = {
       useCase: "Customer Support",
       category: "Chatbot",
       pricing: "Paid",
-      slug: "zendesk-ai",
+      slug: "https://www.zendesk.com/in/service/ai/",
       icon: "🎧",
     },
     {
@@ -164,7 +164,7 @@ const toolsBySubcategory = {
       useCase: "Customer Support",
       category: "Chatbot",
       pricing: "Free",
-      slug: "tidio",
+      slug: "https://www.tidio.com/",
       icon: "💬",
     },
   ],
@@ -176,7 +176,7 @@ const toolsBySubcategory = {
       useCase: "CRM",
       category: "Sales",
       pricing: "Paid",
-      slug: "salesforce-einstein",
+      slug: "https://www.salesforce.com/in/artificial-intelligence/",
       icon: "☁️",
     },
     {
@@ -186,7 +186,7 @@ const toolsBySubcategory = {
       useCase: "CRM",
       category: "Sales",
       pricing: "Free",
-      slug: "hubspot-ai",
+      slug: "https://www.hubspot.com/products/artificial-intelligence",
       icon: "🎯",
     },
     {
@@ -196,7 +196,7 @@ const toolsBySubcategory = {
       useCase: "CRM",
       category: "Sales",
       pricing: "Paid",
-      slug: "pipedrive-ai",
+      slug: "https://www.pipedrive.com/en/products/ai-crm",
       icon: "📈",
     },
     {
@@ -206,7 +206,7 @@ const toolsBySubcategory = {
       useCase: "CRM",
       category: "Sales",
       pricing: "Paid",
-      slug: "zoho-crm-ai",
+      slug: "https://www.zoho.com/crm/zia/",
       icon: "📊",
     },
     {
@@ -216,7 +216,7 @@ const toolsBySubcategory = {
       useCase: "CRM",
       category: "Sales",
       pricing: "Paid",
-      slug: "copper-ai",
+      slug: "https://www.copperai.co/",
       icon: "🔗",
     },
   ],
