@@ -1,5 +1,10 @@
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
+import pdf from "../../public/icons/pdf.png";
+import png from "../../public/icons/png.png";
+import text from "../../public/icons/case_change.webp";
+import ai from "../../public/icons/ai_students.webp";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -7,6 +12,7 @@ export default function Home() {
 
       {/* ================= BACKGROUND EFFECT ================= */}
       <div className="pointer-events-none absolute inset-0 -z-10">
+         
         <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[var(--accent-opacity-10)] blur-3xl rounded-full opacity-40 animate-pulse" />
       </div>
 
@@ -58,19 +64,36 @@ export default function Home() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
-            { title: "PDF Tools", desc: "Split, merge, reorder and convert PDFs.", link: "/tools/split-pdf" },
-            { title: "Image Tools", desc: "Compress, resize and convert images.", link: "/tools/image-compressor" },
-            { title: "Text Tools", desc: "Word counter and formatting tools.", link: "/tools/word-counter" },
-            { title: "AI Tools", desc: "Resume builder and AI productivity tools.", link: "/tools/ai-resume-builder" }
+            { title: "PDF Tools",icon:pdf, desc: "Split, merge, reorder and convert PDFs.", link: "/tools" },
+            { title: "Image Tools",icon:png,  desc: "Compress, resize and convert images.", link: "/tools" },
+            { title: "Text Tools",icon:text, desc: "Word counter and formatting tools.", link: "/tools/word-counter" },
+            { title: "AI Tools",icon:ai, desc: "Resume builder and AI productivity tools.", link: "/tools" }
           ].map((item) => (
             <Link
               key={item.title}
               href={item.link}
               className="group relative flex flex-col rounded-2xl border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-opacity-60)] hover:shadow-lg hover:shadow-[var(--accent-opacity-10)] backdrop-blur"
             >
+
+               <div className="mb-5 flex items-center justify-center w-16 h-16 rounded-2xl bg-[var(--surface-opacity-10)] backdrop-blur-md transition duration-300 group-hover:scale-110 group-hover:bg-[var(--accent-opacity-10)]">
+                        {item.icon ? (
+                          <Image
+                            src={item.icon}
+                            alt={`${item.title} icon`}
+                            width={48}
+                            height={48}
+                            className="object-contain"
+                          />
+                        ) : (
+                          <span className="text-xl font-bold text-[var(--accent)]">
+                            {item.title.charAt(0)}
+                          </span>
+                        )}
+                      </div>
               <h3 className="text-xl font-semibold group-hover:text-[var(--accent)] transition">
                 {item.title}
               </h3>
+              {/* <img src={item.icon} alt={`${item.title} icon`} className="w-12 h-12 mt-4" /> */}
               <p className="mt-3 text-sm text-[var(--text-secondary)]">
                 {item.desc}
               </p>

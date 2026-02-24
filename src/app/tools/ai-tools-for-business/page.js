@@ -20,7 +20,7 @@ const toolsBySubcategory = {
       useCase: "Content Creation",
       category: "Marketing",
       pricing: "Paid",
-      slug: "jasper-ai",
+      slug: "https://www.jasper.ai/",
       icon: "📝",
     },
     {
@@ -30,7 +30,7 @@ const toolsBySubcategory = {
       useCase: "Content Creation",
       category: "Marketing",
       pricing: "Free",
-      slug: "copy-ai",
+      slug: "https://www.copy.ai/",
       icon: "📄",
     },
     {
@@ -40,7 +40,7 @@ const toolsBySubcategory = {
       useCase: "SEO",
       category: "Marketing",
       pricing: "Paid",
-      slug: "surfer-seo",
+      slug: "https://surferseo.com/solutions/seo-specialist/",
       icon: "🔍",
     },
     {
@@ -50,7 +50,7 @@ const toolsBySubcategory = {
       useCase: "SEO",
       category: "Marketing",
       pricing: "Paid",
-      slug: "frase-io",
+      slug: "https://www.frase.io/features/agent",
       icon: "✨",
     },
     {
@@ -60,7 +60,7 @@ const toolsBySubcategory = {
       useCase: "Content Creation",
       category: "Marketing",
       pricing: "Paid",
-      slug: "outranking",
+      slug: "https://www.outranking.io/",
       icon: "🚀",
     },
   ],
@@ -72,7 +72,7 @@ const toolsBySubcategory = {
       useCase: "Writing & Editing",
       category: "Productivity",
       pricing: "Free",
-      slug: "grammarly",
+      slug: "https://www.grammarly.com/ai",
       icon: "✍️",
     },
     {
@@ -82,7 +82,7 @@ const toolsBySubcategory = {
       useCase: "Email Writing",
       category: "Productivity",
       pricing: "Paid",
-      slug: "flowrite",
+      slug: "https://www.maestrolabs.com/flowrite",
       icon: "📧",
     },
     {
@@ -92,7 +92,7 @@ const toolsBySubcategory = {
       useCase: "Email Writing",
       category: "Sales",
       pricing: "Paid",
-      slug: "lavender",
+      slug: "https://www.lavender.ai/",
       icon: "💜",
     },
     {
@@ -102,7 +102,7 @@ const toolsBySubcategory = {
       useCase: "Email Writing",
       category: "Marketing",
       pricing: "Free",
-      slug: "copy-ai",
+      slug: "https://www.copy.ai/",
       icon: "📝",
     },
     {
