@@ -20,7 +20,7 @@ const toolsBySubcategory = {
       useCase: "Content Creation",
       category: "Writing",
       pricing: "Paid",
-      slug: "jasper-ai",
+      slug: "https://www.jasper.ai/",
       icon: "📝",
     },
     {
@@ -30,7 +30,7 @@ const toolsBySubcategory = {
       useCase: "Content Creation",
       category: "Writing",
       pricing: "Free",
-      slug: "copy-ai",
+      slug: "https://www.copy.ai/",
       icon: "📄",
     },
     {
@@ -40,7 +40,7 @@ const toolsBySubcategory = {
       useCase: "Writing & Content",
       category: "Chatbot",
       pricing: "Free",
-      slug: "chatgpt",
+      slug: "https://chat.openai.com/",
       icon: "💬",
     },
     {
@@ -50,7 +50,7 @@ const toolsBySubcategory = {
       useCase: "Content Creation",
       category: "Writing",
       pricing: "Paid",
-      slug: "writesonic",
+      slug: "https://writesonic.com/",
       icon: "🚀",
     },
     {
@@ -60,7 +60,7 @@ const toolsBySubcategory = {
       useCase: "Content Creation",
       category: "Writing",
       pricing: "Free",
-      slug: "rytr",
+      slug: "https://rytr.me/",
       icon: "✍️",
     },
   ],
@@ -72,7 +72,7 @@ const toolsBySubcategory = {
       useCase: "Content Creation",
       category: "Marketing",
       pricing: "Free",
-      slug: "copy-ai",
+      slug: "https://www.copy.ai/",
       icon: "📱",
     },
     {
@@ -82,7 +82,7 @@ const toolsBySubcategory = {
       useCase: "Content Creation",
       category: "Marketing",
       pricing: "Paid",
-      slug: "jasper-ai",
+      slug: "https://www.jasper.ai/",
       icon: "✨",
     },
     {
@@ -92,7 +92,7 @@ const toolsBySubcategory = {
       useCase: "Content Creation",
       category: "Marketing",
       pricing: "Paid",
-      slug: "lately-ai",
+      slug: "https://www.lately.ai/",
       icon: "📊",
     },
     {
@@ -102,7 +102,7 @@ const toolsBySubcategory = {
       useCase: "Content Creation",
       category: "Marketing",
       pricing: "Free",
-      slug: "flick-ai",
+      slug: "https://flick.social/",
       icon: "🎯",
     },
     {
@@ -112,7 +112,7 @@ const toolsBySubcategory = {
       useCase: "Content Creation",
       category: "Marketing",
       pricing: "Paid",
-      slug: "hootsuite-ai",
+      slug: "https://hootsuite.com/",
       icon: "🦉",
     },
   ],
@@ -124,7 +124,7 @@ const toolsBySubcategory = {
       useCase: "Design",
       category: "Creative",
       pricing: "Free",
-      slug: "canva-ai",
+      slug: "https://www.canva.com/",
       icon: "🎨",
     },
     {
@@ -134,7 +134,7 @@ const toolsBySubcategory = {
       useCase: "Image Generation",
       category: "Creative",
       pricing: "Paid",
-      slug: "midjourney",
+      slug: "https://www.midjourney.com/",
       icon: "🖼️",
     },
     {
@@ -144,7 +144,7 @@ const toolsBySubcategory = {
       useCase: "Image Generation",
       category: "Creative",
       pricing: "Free",
-      slug: "dalle",
+      slug: "https://openai.com/dall-e",
       icon: "🎭",
     },
     {
@@ -154,7 +154,7 @@ const toolsBySubcategory = {
       useCase: "Design",
       category: "Creative",
       pricing: "Free",
-      slug: "thumbnail-ai",
+      slug: "https://thumbnail.ai/",
       icon: "📸",
     },
     {
@@ -164,7 +164,7 @@ const toolsBySubcategory = {
       useCase: "Image Generation",
       category: "Creative",
       pricing: "Free",
-      slug: "stable-diffusion",
+      slug: "https://stability.ai/",
       icon: "🎨",
     },
   ],
@@ -186,7 +186,7 @@ const toolsBySubcategory = {
       useCase: "Video Editing",
       category: "Creative",
       pricing: "Paid",
-      slug: "descript",
+      slug: "https://runwayml.com/",
       icon: "✂️",
     },
     {
@@ -196,7 +196,7 @@ const toolsBySubcategory = {
       useCase: "Video Editing",
       category: "Creative",
       pricing: "Paid",
-      slug: "synthesia",
+      slug: "https://www.synthesia.io/",
       icon: "🤖",
     },
     {
@@ -206,7 +206,7 @@ const toolsBySubcategory = {
       useCase: "Video Editing",
       category: "Creative",
       pricing: "Free",
-      slug: "kapwing-ai",
+      slug: "https://www.kapwing.com/",
       icon: "🎥",
     },
     {
@@ -216,7 +216,7 @@ const toolsBySubcategory = {
       useCase: "Video Editing",
       category: "Creative",
       pricing: "Paid",
-      slug: "pictory-ai",
+      slug: "https://www.pictory.ai/",
       icon: "📹",
     },
   ],
