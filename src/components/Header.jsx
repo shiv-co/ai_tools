@@ -105,7 +105,7 @@ export default function Header() {
             <div className="pt-2 flex items-center justify-between">
               <ThemeToggle />
               <Link
-                href="/free-tools"
+                href="/tools"
                 className="px-4 py-2 rounded-lg bg-[var(--accent)] text-white text-sm"
                 onClick={() => setOpen(false)}
               >
