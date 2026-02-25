@@ -64,7 +64,7 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />
             <Link
-              href="/free-tools"
+              href="/tools"
               className="px-4 py-2 rounded-lg bg-[var(--accent)] text-white text-sm font-medium"
             >
               Free Tools
