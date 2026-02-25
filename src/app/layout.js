@@ -37,9 +37,17 @@ export const metadata = {
     index: true,
     follow: true,
   },
+
+  verification: {
+    google: "jzQ4LLW8pnU16xvg9P8nnwW9jIfcc1eB0cRUxrMF9CY",
+  },
 };
 
+
+
 export default function RootLayout({ children }) {
+
+  
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body className="bg-[var(--bg)] text-[var(--text-primary)] transition-colors duration-300">
@@ -56,7 +64,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         {/* <!-- Google tag (gtag.js) --> */}
-
+        
 
   <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-WVR34ZM8P8"

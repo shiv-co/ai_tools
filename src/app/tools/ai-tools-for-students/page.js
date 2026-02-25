@@ -20,7 +20,7 @@ const toolsBySubcategory = {
       useCase: "Note Taking",
       category: "Productivity",
       pricing: "Paid",
-      slug: "notion-ai",
+      slug: "https://www.notion.so/product/ai",
       icon: "📝",
     },
     {
@@ -30,7 +30,7 @@ const toolsBySubcategory = {
       useCase: "Note Taking",
       category: "Productivity",
       pricing: "Free",
-      slug: "obsidian-ai",
+      slug: "https://obsidian.md/",
       icon: "🔗",
     },
     {
@@ -40,7 +40,7 @@ const toolsBySubcategory = {
       useCase: "Note Taking",
       category: "Productivity",
       pricing: "Free",
-      slug: "mem-ai",
+      slug: "https://mem.ai/",
       icon: "🧠",
     },
     {
@@ -50,7 +50,7 @@ const toolsBySubcategory = {
       useCase: "Note Taking",
       category: "Productivity",
       pricing: "Free",
-      slug: "otter-ai",
+      slug: "https://otter.ai/",
       icon: "🎤",
     },
     {
@@ -60,7 +60,7 @@ const toolsBySubcategory = {
       useCase: "Note Taking",
       category: "Productivity",
       pricing: "Free",
-      slug: "fireflies-ai",
+      slug: "https://fireflies.ai/",
       icon: "🔥",
     },
   ],
@@ -72,7 +72,7 @@ const toolsBySubcategory = {
       useCase: "Writing & Editing",
       category: "Productivity",
       pricing: "Free",
-      slug: "grammarly",
+      slug: "https://www.grammarly.com/",
       icon: "✍️",
     },
     {
@@ -82,7 +82,7 @@ const toolsBySubcategory = {
       useCase: "Content Creation",
       category: "Writing",
       pricing: "Paid",
-      slug: "jasper-ai",
+      slug: "https://www.jasper.ai/",
       icon: "📄",
     },
     {
@@ -92,7 +92,7 @@ const toolsBySubcategory = {
       useCase: "Writing & Editing",
       category: "Writing",
       pricing: "Free",
-      slug: "quillbot",
+      slug: "https://quillbot.com/",
       icon: "🔄",
     },
     {
@@ -102,7 +102,7 @@ const toolsBySubcategory = {
       useCase: "Content Creation",
       category: "Writing",
       pricing: "Free",
-      slug: "copy-ai",
+      slug: "https://www.copy.ai/",
       icon: "📝",
     },
     {
@@ -112,7 +112,7 @@ const toolsBySubcategory = {
       useCase: "Writing & Content",
       category: "Chatbot",
       pricing: "Free",
-      slug: "chatgpt",
+      slug: "https://chat.openai.com/",
       icon: "💬",
     },
   ],
@@ -124,7 +124,7 @@ const toolsBySubcategory = {
       useCase: "Learning",
       category: "Education",
       pricing: "Free",
-      slug: "quizlet-ai",
+      slug: "https://quizlet.com/",
       icon: "🎯",
     },
     {
@@ -134,7 +134,7 @@ const toolsBySubcategory = {
       useCase: "Learning",
       category: "Education",
       pricing: "Free",
-      slug: "anki-ai",
+      slug: "https://apps.ankiweb.net/",
       icon: "📚",
     },
     {
@@ -144,7 +144,7 @@ const toolsBySubcategory = {
       useCase: "Research",
       category: "Chatbot",
       pricing: "Free",
-      slug: "claude-ai",
+      slug: "https://claude.ai/",
       icon: "🤖",
     },
     {
@@ -154,7 +154,7 @@ const toolsBySubcategory = {
       useCase: "Learning",
       category: "Education",
       pricing: "Free",
-      slug: "khan-academy-ai",
+      slug: "https://www.khanacademy.org/",
       icon: "🎓",
     },
     {
@@ -164,7 +164,7 @@ const toolsBySubcategory = {
       useCase: "Learning",
       category: "Education",
       pricing: "Free",
-      slug: "studysmarter-ai",
+      slug: "https://www.studysmarter.us",
       icon: "📊",
     },
   ],
@@ -176,7 +176,7 @@ const toolsBySubcategory = {
       useCase: "Resume Building",
       category: "Career",
       pricing: "Free",
-      slug: "resume-io-ai",
+      slug: "https://resume.io/",
       icon: "📄",
     },
     {
@@ -186,7 +186,7 @@ const toolsBySubcategory = {
       useCase: "Resume Building",
       category: "Career",
       pricing: "Paid",
-      slug: "zety-ai",
+      slug: "https://zety.com/",
       icon: "💼",
     },
     {
@@ -196,7 +196,7 @@ const toolsBySubcategory = {
       useCase: "Resume Building",
       category: "Career",
       pricing: "Free",
-      slug: "rezi-ai",
+      slug: "https://www.rezi.ai/",
       icon: "✨",
     },
     {
@@ -206,7 +206,7 @@ const toolsBySubcategory = {
       useCase: "Resume Building",
       category: "Career",
       pricing: "Paid",
-      slug: "enhancv-ai",
+      slug: "https://enhancv.com/",
       icon: "🎨",
     },
     {
@@ -216,7 +216,7 @@ const toolsBySubcategory = {
       useCase: "Resume Building",
       category: "Career",
       pricing: "Free",
-      slug: "kickresume-ai",
+      slug: "https://www.kickresume.com/",
       icon: "🚀",
     },
   ],

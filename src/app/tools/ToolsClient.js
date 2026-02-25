@@ -162,7 +162,7 @@ const toolGroups = [
       {
         title: "MP4 to MP3",
         href: "/tools/mp4-to-mp3",
-        icon: mp4_to_mp3,
+        icon:mp4_to_mp3,
         description: "Extract high-quality MP3 audio from MP4 videos."
       }
     ],
