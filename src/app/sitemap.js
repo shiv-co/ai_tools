@@ -1,6 +1,6 @@
 // app/sitemap.js
 
-import { blogs } from "@/data/blogs"; // adjust path if needed
+import { blogs } from "../app/blog/data/blogs"; // adjust path if needed
 
 export default function sitemap() {
   const baseUrl = "https://aitechtactics.com";
