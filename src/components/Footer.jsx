@@ -70,7 +70,7 @@ export default function Footer() {
           <div>
             <h4 className="font-medium mb-3">Newsletter</h4>
             <p className="text-sm text-[var(--text-secondary)] mb-3">
-              Weekly updates on AI tools.
+              Weekly updates on AI Tech Tactics.
             </p>
             <input
               type="email"
@@ -83,7 +83,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="mt-10 pt-6 border-t border-[var(--border)] text-sm text-[var(--text-secondary)] flex flex-col sm:flex-row justify-between gap-3">
-          <span>© {new Date().getFullYear()} AITools. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} AI Tech Tactics. All rights reserved.</span>
           <span>Websites Developed and Maintained by Shivam</span>
         </div>
 

@@ -327,7 +327,7 @@ export default function ToolsPage() {
       )}
 
       {/* RECENT */}
-      {recent.length > 0 && (
+      {/* {recent.length > 0 && (
         <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-16 space-y-6">
           <h2 className="text-2xl font-bold">🕘 Recently Used</h2>
 
@@ -341,7 +341,7 @@ export default function ToolsPage() {
             ))}
           </div>
         </section>
-      )}
+      )} */}
 
       {/* FILTERED RESULTS */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-24 space-y-6">

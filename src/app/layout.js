@@ -1,7 +1,31 @@
 import "./globals.css";
+import { Bricolage_Grotesque, DM_Sans, JetBrains_Mono } from "next/font/google";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Script from "next/script";
+
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
+  variable: "--font-bricolage", // exposes as a CSS variable
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+});
 
 export const metadata = {
   metadataBase: new URL("https://aitechtactics.com"),
@@ -43,15 +67,14 @@ export const metadata = {
   },
 };
 
-
-
 export default function RootLayout({ children }) {
-
-  
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`dark ${bricolage.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
+    >
       <body className="bg-[var(--bg)] text-[var(--text-primary)] transition-colors duration-300">
-
         {/* Google AdSense Script */}
         <Script
           async
@@ -64,9 +87,8 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         {/* <!-- Google tag (gtag.js) --> */}
-        
 
-  <Script
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-WVR34ZM8P8"
           strategy="afterInteractive"
         />
@@ -78,7 +100,6 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-WVR34ZM8P8');
           `}
         </Script>
-
       </body>
     </html>
   );
