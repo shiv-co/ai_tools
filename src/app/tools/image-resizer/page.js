@@ -353,7 +353,7 @@ export default function ImageResizerPage() {
               JPG to WebP Converter
             </Link>
             <Link
-              href="/tools/image-comppressor"
+              href="/tools/image-compressor"
               className="text-[var(--accent)] hover:underline"
             >
               Image Compressor

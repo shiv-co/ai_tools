@@ -148,13 +148,13 @@ export default function ComparisonPage() {
             {/* CTA */}
             <div className="rounded-2xl border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] p-6 text-center">
               <p className="text-sm text-[var(--text-secondary)]">
-                Want a side-by-side interactive comparison?
+                Want to read a side-by-side interactive comparison?
               </p>
               <Link
-                href="/compare"
+                href="/comparisons"
                 className="mt-4 inline-block rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90"
               >
-                Try Comparison Tool
+                Try Comparisons Blogs 
               </Link>
             </div>
 

@@ -222,7 +222,7 @@ export default function HeicToJpgPage() {
               PNG to JPG Converter
             </Link>
             <Link
-              href="/tools/compress-image"
+              href="/tools/image-compressor"
               className="text-[var(--accent)] hover:underline"
             >
               Image Compressor

@@ -37,9 +37,9 @@ const toolsBySubcategory = {
       name: "Codeium",
       description: "Free AI code completion tool with multi-language support and intelligent suggestions.",
       useCase: "Development",
-      category: "https://codeium.com/",
+      category: "Coding",
       pricing: "Free",
-      slug: "codeium",
+      slug:"https://codeium.com/",
       icon: "⚡",
     },
     {
