@@ -60,7 +60,7 @@ export default async function BlogDetailPage({ params }) {
 
             <div className="blog-meta-row">
               <img
-                src={authorImg}
+                src="/images/author.png"
                 alt={blog.author}
                 className="blog-author-avatar"
               />
@@ -80,7 +80,7 @@ export default async function BlogDetailPage({ params }) {
 
           {/* Hero image anchored at bottom of hero */}
           <div className="blog-hero-image-wrap">
-            <img src={blog.image} alt={blog.title} />
+            <img src={blog.image} alt={blog.title} loading="lazy" />
             <div className="blog-hero-image-overlay" />
           </div>
         </section>
