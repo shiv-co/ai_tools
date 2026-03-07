@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback, memo } from "react";
 
 import split_pdf      from "../../../public/icons/partition.webp";
 import merge_pdf      from "../../../public/icons/merge_pdf.png";
@@ -123,14 +123,14 @@ export default function ToolsPage() {
     } catch {}
   }, []);
 
-  const handleToolClick = (tool) => {
+  const handleToolClick = useCallback((tool) => {
     try {
       const existing = JSON.parse(localStorage.getItem("recentTools")) || [];
       const updated  = [tool, ...existing.filter((t) => t.href !== tool.href)].slice(0, 6);
       localStorage.setItem("recentTools", JSON.stringify(updated));
       setRecent(updated);
     } catch {}
-  };
+  }, []);
 
   // ── Derived state ─────────────────────────────────────────
   const isSearching   = search.trim().length > 0;
@@ -913,9 +913,9 @@ export default function ToolsPage() {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   TOOL CARD
+   TOOL CARD (memoized to reduce re-renders in tool grid)
 ───────────────────────────────────────────────────────────────────────────── */
-function ToolCard({ tool, onClick }) {
+const ToolCard = memo(function ToolCard({ tool, onClick }) {
   const accent     = tool.accent     || "var(--accent)";
   const accentSoft = tool.accentSoft || "var(--accent-opacity-10, rgba(80,105,231,0.10))";
 
@@ -949,12 +949,12 @@ function ToolCard({ tool, onClick }) {
       </div>
     </Link>
   );
-}
+});
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   TRENDING CARD (horizontal compact)
+   TRENDING CARD (horizontal compact, memoized)
 ───────────────────────────────────────────────────────────────────────────── */
-function TrendingCard({ tool, onClick }) {
+const TrendingCard = memo(function TrendingCard({ tool, onClick }) {
   const accent     = tool.accent     || "var(--accent)";
   const accentSoft = tool.accentSoft || "var(--accent-opacity-10, rgba(80,105,231,0.10))";
 
@@ -986,4 +986,4 @@ function TrendingCard({ tool, onClick }) {
       </div>
     </Link>
   );
-}
+});

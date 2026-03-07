@@ -9,17 +9,14 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="relative overflow-hidden bg-[var(--bg)] text-[var(--text-primary)]">
-
       {/* ================= BACKGROUND EFFECT ================= */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-         
         <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[var(--accent-opacity-10)] blur-3xl rounded-full opacity-40 animate-pulse" />
       </div>
 
       {/* ================= HERO ================= */}
       <section className="px-4 sm:px-6 lg:px-8 pt-20 pb-16 max-w-7xl mx-auto">
         <div className="flex flex-col items-center text-center gap-6 max-w-4xl mx-auto">
-
           <span className="px-4 py-1 rounded-full text-xs font-semibold bg-[var(--accent-opacity-10)] text-[var(--accent)] tracking-wider">
             🚀 All-in-One Online Tools Platform
           </span>
@@ -32,8 +29,8 @@ export default function Home() {
           </h1>
 
           <p className="text-lg sm:text-xl text-[var(--text-secondary)] max-w-2xl">
-            Free PDF, Image, Text, Media and AI tools built for speed,
-            privacy, and productivity. Everything works directly in your browser.
+            Free PDF, Image, Text, Media and AI tools built for speed, privacy,
+            and productivity. Everything works directly in your browser.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 pt-4">
@@ -64,32 +61,53 @@ export default function Home() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
-            { title: "PDF Tools",icon:pdf, desc: "Split, merge, reorder and convert PDFs.", link: "/tools" },
-            { title: "Image Tools",icon:png,  desc: "Compress, resize and convert images.", link: "/tools" },
-            { title: "Text Tools",icon:text, desc: "Word counter and formatting tools.", link: "/tools/word-counter" },
-            { title: "AI Tools",icon:ai, desc: "Resume builder and AI productivity tools.", link: "/tools" }
+            {
+              title: "PDF Tools",
+              icon: pdf,
+              desc: "Split, merge, reorder and convert PDFs.",
+              link: "/tools",
+            },
+            {
+              title: "Image Tools",
+              icon: png,
+              desc: "Compress, resize and convert images.",
+              link: "/tools",
+            },
+            {
+              title: "Text Tools",
+              icon: text,
+              desc: "Word counter and formatting tools.",
+              link: "/tools/word-counter",
+            },
+            {
+              title: "AI Tools",
+              icon: ai,
+              desc: "Resume builder and AI productivity tools.",
+              link: "/tools",
+            },
           ].map((item) => (
             <Link
               key={item.title}
               href={item.link}
               className="group relative flex flex-col rounded-2xl border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-opacity-60)] hover:shadow-lg hover:shadow-[var(--accent-opacity-10)] backdrop-blur"
             >
-
-               <div className="mb-5 flex items-center justify-center w-16 h-16 rounded-2xl bg-[var(--surface-opacity-10)] backdrop-blur-md transition duration-300 group-hover:scale-110 group-hover:bg-[var(--accent-opacity-10)]">
-                        {item.icon ? (
-                          <Image
-                            src={item.icon}
-                            alt={`${item.title} icon`}
-                            width={48}
-                            height={48}
-                            className="object-contain"
-                          />
-                        ) : (
-                          <span className="text-xl font-bold text-[var(--accent)]">
-                            {item.title.charAt(0)}
-                          </span>
-                        )}
-                      </div>
+              <div className="mb-5 flex items-center justify-center w-16 h-16 rounded-2xl bg-[var(--surface-opacity-10)] backdrop-blur-md transition duration-300 group-hover:scale-110 group-hover:bg-[var(--accent-opacity-10)]">
+                {item.icon ? (
+                  <Image
+                    src={item.icon}
+                    alt={`${item.title} icon`}
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                    priority={item.title === "PDF Tools"}
+                    loading={item.title === "PDF Tools" ? undefined : "lazy"}
+                  />
+                ) : (
+                  <span className="text-xl font-bold text-[var(--accent)]">
+                    {item.title.charAt(0)}
+                  </span>
+                )}
+              </div>
               <h3 className="text-xl font-semibold group-hover:text-[var(--accent)] transition">
                 {item.title}
               </h3>
@@ -133,7 +151,8 @@ export default function Home() {
               <div className="text-4xl mb-4">📈</div>
               <h3 className="font-semibold text-lg">Built for Productivity</h3>
               <p className="text-sm text-[var(--text-secondary)] mt-2">
-                Designed to help students, creators, and professionals work smarter.
+                Designed to help students, creators, and professionals work
+                smarter.
               </p>
             </div>
           </div>
@@ -157,7 +176,6 @@ export default function Home() {
           Get Started →
         </Link>
       </section>
-
     </main>
   );
 }

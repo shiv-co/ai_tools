@@ -26,7 +26,8 @@ export default function Header() {
       fill
       sizes="48px"
       className="object-contain"
-      priority
+      loading="lazy"
+      
     />
   </div>
 

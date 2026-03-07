@@ -78,7 +78,7 @@ export default function RootLayout({ children }) {
         {/* Google AdSense Script */}
         <Script
           async
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3808428706215749"
           crossOrigin="anonymous"
         />

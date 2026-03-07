@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactCompiler: true,
+  productionBrowserSourceMaps: false,
   // Required for @ffmpeg/ffmpeg in browser (SharedArrayBuffer) – only on converter page
   async headers() {
     return [
