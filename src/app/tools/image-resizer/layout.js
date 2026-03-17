@@ -1,40 +1,10 @@
-export const metadata = {
-  title: "Image Resizer Online Free (Resize JPG, PNG, WebP) | AI Tech Tactics",
+import ToolRouteLayout from "@/components/ToolRouteLayout";
+import { buildMetadata } from "@/lib/seo";
+import { getToolSeoData } from "@/lib/tool-seo-data";
 
-  description:
-    "Resize images online for free. Change image dimensions by pixels, percentage, cm or inches. Fast, secure and works directly in your browser.",
+const tool = getToolSeoData("image-resizer");
+export const metadata = buildMetadata({ title: tool.title, description: tool.description, path: tool.path });
 
-  keywords: [
-    "image resizer",
-    "resize image online",
-    "change image size",
-    "resize jpg",
-    "resize png",
-    "resize image by pixels",
-    "image size changer",
-    "free image resizer",
-  ],
-
-  alternates: {
-    canonical: "https://aitechtactics.com/tools/image-resizer",
-  },
-
-  openGraph: {
-    title: "Image Resizer Online Free",
-    description:
-      "Resize JPG, PNG and WebP images instantly. Change dimensions by pixels or percentage. No upload required.",
-    url: "https://aitechtactics.com/tools/image-resizer",
-    type: "website",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Free Image Resizer Tool",
-    description:
-      "Resize images without losing quality. Secure and browser-based.",
-  },
-};
-
-export default function ImageResizerLayout({ children }) {
-  return <>{children}</>;
+export default function Layout({ children }) {
+  return <ToolRouteLayout slug="image-resizer">{children}</ToolRouteLayout>;
 }

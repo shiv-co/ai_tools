@@ -654,8 +654,11 @@ export default function ImageCropperPage() {
                       <img
                         ref={imgRef}
                         src={imageSrc}
+                        alt="Image crop preview"
+                        width={640}
+                        height={480}
+                        loading="lazy"
                         onLoad={onImageLoad}
-                        alt="Crop source"
                         style={{
                           transform: `rotate(${rotation}deg) scaleX(${flipH ? -1 : 1}) scaleY(${flipV ? -1 : 1})`,
                           transition: "transform 0.25s ease",
@@ -843,7 +846,7 @@ export default function ImageCropperPage() {
                     </span>
                   </div>
                   <div className="ic-result-body">
-                    <img src={preview} alt="Cropped result" />
+                    <img src={preview} alt="Cropped result" width={640} height={480} loading="lazy" />
                     <a
                       href={preview}
                       download={`${fileName}-cropped.${format.ext}`}

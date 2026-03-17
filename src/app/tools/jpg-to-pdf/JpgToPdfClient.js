@@ -218,6 +218,9 @@ export default function JpgToPdfPage() {
                     <img
                       src={previewUrl}
                       alt={file.name}
+                      width={640}
+                      height={480}
+                      loading="lazy"
                       className="h-28 w-full rounded-lg object-cover"
                     />
 

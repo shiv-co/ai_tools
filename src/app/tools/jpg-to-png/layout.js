@@ -1,26 +1,10 @@
-export const metadata = {
-  title: "JPG to PNG Converter Online Free | Convert JPEG to PNG Instantly",
-  description:
-    "Convert JPG to PNG online for free. Fast, secure, and browser-based JPEG to PNG converter. No uploads required.",
-  keywords: [
-    "jpg to png",
-    "jpeg to png",
-    "convert jpg to png",
-    "jpg to png converter online",
-    "free jpg to png tool"
-  ],
-  alternates: {
-    canonical: "https://aitechtactics.com/tools/jpg-to-png",
-  },
-  openGraph: {
-    title: "JPG to PNG Converter Online",
-    description:
-      "Free online JPG to PNG converter. Convert JPEG images instantly in your browser.",
-    url: "https://aitechtactics.com/tools/jpg-to-png",
-    type: "website",
-  },
-};
+import ToolRouteLayout from "@/components/ToolRouteLayout";
+import { buildMetadata } from "@/lib/seo";
+import { getToolSeoData } from "@/lib/tool-seo-data";
 
-export default function JpgToPngLayout({ children }) {
-  return <div>{children}</div>;
+const tool = getToolSeoData("jpg-to-png");
+export const metadata = buildMetadata({ title: tool.title, description: tool.description, path: tool.path });
+
+export default function Layout({ children }) {
+  return <ToolRouteLayout slug="jpg-to-png">{children}</ToolRouteLayout>;
 }

@@ -1,27 +1,10 @@
-export const metadata = {
-  title: "JPG to WebP Converter Online Free – Fast & Secure",
-  description:
-    "Convert JPG to WebP online for free. Reduce image size, improve website speed, and optimize for SEO. 100% browser-based and secure.",
-  keywords: [
-    "JPG to WebP",
-    "Convert JPG to WebP",
-    "JPG to WebP online",
-    "Free JPG to WebP converter",
-    "Image optimization tool",
-    "WebP converter free",
-  ],
-  alternates: {
-    canonical: "https://aitechtactics.com/tools/jpg-to-webp",
-  },
-  openGraph: {
-    title: "JPG to WebP Converter Online Free",
-    description:
-      "Convert JPG images to WebP format instantly. Improve website performance and reduce file size.",
-    url: "https://aitechtactics.com/tools/jpg-to-webp",
-    type: "website",
-  },
-};
+import ToolRouteLayout from "@/components/ToolRouteLayout";
+import { buildMetadata } from "@/lib/seo";
+import { getToolSeoData } from "@/lib/tool-seo-data";
 
-export default function JpgToWebpLayout({ children }) {
-  return <div>{children}</div>;
+const tool = getToolSeoData("jpg-to-webp");
+export const metadata = buildMetadata({ title: tool.title, description: tool.description, path: tool.path });
+
+export default function Layout({ children }) {
+  return <ToolRouteLayout slug="jpg-to-webp">{children}</ToolRouteLayout>;
 }

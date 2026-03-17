@@ -3,7 +3,8 @@ export default function robots() {
     rules: [
       {
         userAgent: "*",
-        allow: "/",
+        allow: ["/", "/tools/", "/blog/", "/comparisons/"],
+        disallow: ["/api/", "/admin/"],
       },
     ],
     sitemap: "https://aitechtactics.com/sitemap.xml",

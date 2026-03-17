@@ -122,6 +122,9 @@ export default function ImageConverterCore({
                   <img
                     src={item.url}
                     alt="Original preview"
+                    width={640}
+                    height={480}
+                    loading="lazy"
                     className="h-40 w-full rounded object-cover"
                   />
                   <p className="mt-2 text-xs text-[var(--text-secondary)] text-center">
@@ -173,6 +176,9 @@ export default function ImageConverterCore({
                   <img
                     src={img.url}
                     alt={img.name}
+                    width={640}
+                    height={480}
+                    loading="lazy"
                     className="h-40 w-full rounded-md object-cover"
                   />
                   <a

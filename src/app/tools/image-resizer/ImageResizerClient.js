@@ -159,7 +159,14 @@ export default function ImageResizerPage() {
         {preview && (
           <div className="rounded-xl border p-2 ">
             <p className="md:mb-2 text-sm font-medium text-center pb-1">Preview</p>
-            <img src={preview} className=" max-h-36 md:max-h-52 w-full rounded object-contain" />
+            <img
+              src={preview}
+              alt="Selected image preview"
+              width={640}
+              height={480}
+              loading="lazy"
+              className=" max-h-36 md:max-h-52 w-full rounded object-contain"
+            />
           </div>
         )}
 
@@ -260,7 +267,14 @@ export default function ImageResizerPage() {
         {/* RESULT */}
         {result && (
           <div className="space-y-3">
-            <img src={result} className="max-h-64 w-full rounded object-contain" />
+            <img
+              src={result}
+              alt="Resized image preview"
+              width={640}
+              height={480}
+              loading="lazy"
+              className="max-h-64 w-full rounded object-contain"
+            />
             <a href={result} download="resized-image.jpg" className="block rounded-lg bg-[var(--accent)] px-4 py-2 text-center text-white">
               Download Image
             </a>

@@ -1,16 +1,19 @@
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Privacy Policy | AI Tech Tactics",
+  description:
+    "Review the AI Tech Tactics privacy policy, including cookies, analytics, ads, and how site data is handled.",
+  path: "/privacy-policy",
+});
+
 export default function PrivacyPolicyPage() {
   return (
     <main className="min-h-screen bg-[var(--bg)] text-[var(--text-primary)]">
 
       {/* ================= HERO ================= */}
       <section className="relative overflow-hidden">
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(circle at 20% 20%, var(--accent-opacity-16), transparent 35%), radial-gradient(circle at 80% 0%, var(--accent-opacity-10), transparent 35%)",
-          }}
-        />
+        <div className="hero-orb-background pointer-events-none absolute inset-0" />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl space-y-6">
             <span className="inline-block rounded-full border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-[var(--accent)]">

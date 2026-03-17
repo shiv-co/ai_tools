@@ -202,6 +202,9 @@ export default function PdfToJpgPage() {
                   <img
                     src={img.url}
                     alt={`Page ${img.page}`}
+                    width={640}
+                    height={480}
+                    loading="lazy"
                     className="rounded-lg"
                   />
 

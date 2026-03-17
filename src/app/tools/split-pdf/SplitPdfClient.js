@@ -192,6 +192,9 @@ export default function SplitPdfPage() {
                   <img
                     src={page.url}
                     alt={`Page ${page.page}`}
+                    width={640}
+                    height={480}
+                    loading="lazy"
                     className="rounded-lg"
                   />
 

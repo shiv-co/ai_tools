@@ -214,6 +214,9 @@ export default function ReorderPdfPage() {
                   <img
                     src={page.preview}
                     alt={`Page ${page.index + 1}`}
+                    width={640}
+                    height={480}
+                    loading="lazy"
                     className="rounded-lg w-full"
                   />
 

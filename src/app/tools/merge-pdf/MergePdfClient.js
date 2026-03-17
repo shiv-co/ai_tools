@@ -179,6 +179,9 @@ export default function MergePdfPage() {
                   <img
                     src={item.preview}
                     alt="PDF preview"
+                    width={160}
+                    height={224}
+                    loading="lazy"
                     className="h-28 w-20 rounded-md object-cover"
                   />
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Purpose: allow AI crawlers to read and cite the site.

@@ -5,6 +5,15 @@ import png from "../../public/icons/png.png";
 import text from "../../public/icons/case_change.webp";
 import ai from "../../public/icons/ai_students.webp";
 import Image from "next/image";
+import SeoJsonLd from "@/components/SeoJsonLd";
+import { buildMetadata, websiteSchema } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "AI Tech Tactics - Free Online Image, PDF & AI Tools",
+  description:
+    "Free online image, PDF, text, media, and AI tools that run in your browser. Fast, secure, and built for everyday productivity.",
+  path: "/",
+});
 
 export default function Home() {
   return (
@@ -176,6 +185,7 @@ export default function Home() {
           Get Started →
         </Link>
       </section>
+      <SeoJsonLd data={websiteSchema()} />
     </main>
   );
 }

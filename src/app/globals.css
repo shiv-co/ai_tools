@@ -11,6 +11,12 @@ select {
   border: 1px solid var(--border);
 }
 
+.hero-orb-background {
+  background:
+    radial-gradient(circle at 20% 20%, var(--accent-opacity-16), transparent 35%),
+    radial-gradient(circle at 80% 0%, var(--accent-opacity-10), transparent 35%);
+}
+
 
 /* =============================================
    🌤️ Light Theme

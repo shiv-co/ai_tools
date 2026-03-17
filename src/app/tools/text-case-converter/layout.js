@@ -1,35 +1,10 @@
-export const metadata = {
-  title:
-    "Text Case Converter Online – Uppercase, Lowercase, Title & Sentence Case",
-  description:
-    "Convert text instantly to UPPERCASE, lowercase, Title Case, or Sentence case online for free. Fast, secure, and browser-based.",
-  keywords: [
-    "text case converter",
-    "uppercase converter",
-    "lowercase converter",
-    "title case converter",
-    "sentence case converter",
-    "change text case online",
-  ],
-  alternates: {
-    canonical: "https://aitechtactics.com/tools/text-case-converter",
-  },
-  openGraph: {
-    title:
-      "Text Case Converter Online – Uppercase, Lowercase, Title & Sentence Case",
-    description:
-      "Convert text to uppercase, lowercase, title case, or sentence case instantly. 100% free and secure.",
-    url: "https://aitechtactics.com/tools/text-case-converter",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Text Case Converter Online",
-    description:
-      "Convert text to uppercase, lowercase, title case, or sentence case instantly for free.",
-  },
-};
+import ToolRouteLayout from "@/components/ToolRouteLayout";
+import { buildMetadata } from "@/lib/seo";
+import { getToolSeoData } from "@/lib/tool-seo-data";
 
-export default function TextCaseLayout({ children }) {
-  return <>{children}</>;
+const tool = getToolSeoData("text-case-converter");
+export const metadata = buildMetadata({ title: tool.title, description: tool.description, path: tool.path });
+
+export default function Layout({ children }) {
+  return <ToolRouteLayout slug="text-case-converter">{children}</ToolRouteLayout>;
 }

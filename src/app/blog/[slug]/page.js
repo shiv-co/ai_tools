@@ -1,11 +1,13 @@
 
 
 import Link from "next/link";
-import authorImg from "../../../../public/images/author.png";
+import Image from "next/image";
 import ShareButtons from "@/components/ShareButtons";
 import { blogs } from "@/app/blog/data/blogs";
 import ReadingProgressBar from "@/components/ReadingProgressBar";
 import { notFound } from "next/navigation";
+import SeoJsonLd from "@/components/SeoJsonLd";
+import { articleSchema, buildMetadata } from "@/lib/seo";
 
 const siteUrl = "https://aitechtactics.com";
 
@@ -13,24 +15,13 @@ export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const blog = blogs.find((b) => b.slug === resolvedParams.slug);
   if (!blog) return {};
-  return {
-    title: `${blog.title} | AI Tech Tactics`,
+  return buildMetadata({
+    title: `${blog.title} | AI Tech Tactics Blog`,
     description: blog.description,
-    alternates: { canonical: `${siteUrl}/blog/${blog.slug}` },
-    openGraph: {
-      title: blog.title,
-      description: blog.description,
-      url: `${siteUrl}/blog/${blog.slug}`,
-      type: "article",
-      images: [{ url: blog.image, width: 1200, height: 630 }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: blog.title,
-      description: blog.description,
-      images: [blog.image],
-    },
-  };
+    path: `/blog/${blog.slug}`,
+    type: "article",
+    image: blog.image,
+  });
 }
 
 export default async function BlogDetailPage({ params }) {
@@ -59,9 +50,11 @@ export default async function BlogDetailPage({ params }) {
             <p className="blog-desc">{blog.description}</p>
 
             <div className="blog-meta-row">
-              <img
+              <Image
                 src="/images/author.png"
                 alt={blog.author}
+                width={48}
+                height={48}
                 className="blog-author-avatar"
               />
               <div className="blog-meta-text">
@@ -80,7 +73,14 @@ export default async function BlogDetailPage({ params }) {
 
           {/* Hero image anchored at bottom of hero */}
           <div className="blog-hero-image-wrap">
-            <img src={blog.image} alt={blog.title} loading="lazy" />
+            <Image
+              src={blog.image}
+              alt={blog.title}
+              width={1200}
+              height={630}
+              className="h-auto w-full"
+              priority
+            />
             <div className="blog-hero-image-overlay" />
           </div>
         </section>
@@ -182,10 +182,13 @@ export default async function BlogDetailPage({ params }) {
                     href={`/blog/${item.slug}`}
                     className="related-item"
                   >
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.title}
+                      width={160}
+                      height={90}
                       className="related-item-img"
+                      loading="lazy"
                     />
                     <div>
                       <div className="related-item-text">{item.title}</div>
@@ -212,27 +215,17 @@ export default async function BlogDetailPage({ params }) {
         </div>
 
         {/* ── SCHEMA ───────────────────────────── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BlogPosting",
-              headline: blog.title,
-              description: blog.description,
-              image: blog.image,
-              keywords: blog.tags?.join(", "),
-              author: { "@type": "Person", name: blog.author },
-              publisher: {
-                "@type": "Organization",
-                name: "AI Tech Tactics",
-                logo: { "@type": "ImageObject", url: `${siteUrl}/logo.png` },
-              },
-              datePublished: blog.dateISO || blog.date,
-              dateModified: blog.dateModifiedISO || blog.dateISO || blog.date,
-              mainEntityOfPage: `${siteUrl}/blog/${blog.slug}`,
-            }),
-          }}
+        <SeoJsonLd
+          data={articleSchema({
+            title: blog.title,
+            description: blog.description,
+            path: `/blog/${blog.slug}`,
+            image: blog.image,
+            datePublished: blog.dateISO || blog.date,
+            dateModified: blog.dateModifiedISO || blog.dateISO || blog.date,
+            author: blog.author,
+            keywords: blog.tags?.join(", "),
+          })}
         />
       </main>
     </>

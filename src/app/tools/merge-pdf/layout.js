@@ -1,41 +1,10 @@
-export const metadata = {
-  title: "Merge PDF Online Free – Combine PDF Files Instantly | AI Tech Tactics",
+import ToolRouteLayout from "@/components/ToolRouteLayout";
+import { buildMetadata } from "@/lib/seo";
+import { getToolSeoData } from "@/lib/tool-seo-data";
 
-  description:
-    "Merge multiple PDF files into one document online for free. Combine PDFs instantly in your browser. No upload, no sign-up required.",
+const tool = getToolSeoData("merge-pdf");
+export const metadata = buildMetadata({ title: tool.title, description: tool.description, path: tool.path });
 
-  keywords: [
-    "merge pdf",
-    "combine pdf files",
-    "merge pdf online",
-    "join pdf files",
-    "combine multiple pdf",
-    "free pdf merger",
-    "combine multiple pdf into one",
-    "pdf merger without upload",
-    "merge pdf without upload",
-  ],
-
-  alternates: {
-    canonical: "https://aitechtactics.com/tools/merge-pdf",
-  },
-
-  openGraph: {
-    title: "Merge PDF Online Free",
-    description:
-      "Combine multiple PDF files into one document instantly. Secure and browser-based PDF merger.",
-    url: "https://aitechtactics.com/tools/merge-pdf",
-    type: "website",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Free Merge PDF Tool",
-    description:
-      "Join and combine PDF files instantly. 100% secure and browser-based.",
-  },
-};
-
-export default function MergePdfLayout({ children }) {
-  return <div>{children}</div>;
+export default function Layout({ children }) {
+  return <ToolRouteLayout slug="merge-pdf">{children}</ToolRouteLayout>;
 }

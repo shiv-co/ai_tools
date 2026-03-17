@@ -167,6 +167,9 @@ export default function ImageCompressorPage() {
                     src={item.url}
                     className="h-40 w-full rounded object-cover"
                     alt="Original preview"
+                    width={640}
+                    height={480}
+                    loading="lazy"
                   />
                   <p className="mt-2 text-xs text-center text-[var(--text-secondary)]">
                     {(item.size / 1024).toFixed(1)} KB
@@ -246,11 +249,17 @@ export default function ImageCompressorPage() {
                       src={img.originalUrl}
                       className="h-32 w-full rounded object-cover"
                       alt="Original"
+                      width={640}
+                      height={480}
+                      loading="lazy"
                     />
                     <img
                       src={img.compressedUrl}
                       className="h-32 w-full rounded object-cover"
                       alt="Compressed"
+                      width={640}
+                      height={480}
+                      loading="lazy"
                     />
                   </div>
 

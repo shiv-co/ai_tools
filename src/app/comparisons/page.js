@@ -1,25 +1,13 @@
 import Link from "next/link";
+import { buildMetadata } from "@/lib/seo";
+import { comparisons } from "@/lib/comparisons-data";
 
-const comparisons = [
-  {
-    title: "ChatGPT vs Google Gemini",
-    slug: "chatgpt-vs-gemini",
-    description:
-      "A detailed comparison of two leading AI assistants based on features, pricing, and real-world usage.",
-  },
-  {
-    title: "ChatGPT vs Claude",
-    slug: "chatgpt-vs-claude",
-    description:
-      "Which AI model is better for writing, reasoning, and long conversations?",
-  },
-  {
-    title: "Gemini vs Microsoft Copilot",
-    slug: "gemini-vs-copilot",
-    description:
-      "Comparing Google Gemini and Microsoft Copilot for productivity and research tasks.",
-  },
-];
+export const metadata = buildMetadata({
+  title: "Tech Comparisons | AI Tech Tactics",
+  description:
+    "Read practical AI and tech comparisons to evaluate features, integrations, workflow fit, and everyday usability.",
+  path: "/comparisons",
+});
 
 export default function ComparisonsPage() {
   return (

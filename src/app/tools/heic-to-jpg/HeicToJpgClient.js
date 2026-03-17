@@ -127,6 +127,9 @@ export default function HeicToJpgPage() {
                   <img
                     src={item.url}
                     alt={item.name}
+                    width={640}
+                    height={480}
+                    loading="lazy"
                     className="h-40 w-full rounded-md object-cover"
                   />
                   <a
