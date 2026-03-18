@@ -1,5 +1,6 @@
 import { blogs } from "@/app/blog/data/blogs";
 import { comparisons } from "@/lib/comparisons-data";
+import { getAllProgrammaticSlugs } from "@/lib/programmatic-page-utils";
 import { absoluteUrl } from "@/lib/site";
 
 const staticRoutes = [
@@ -42,6 +43,13 @@ const toolRoutes = [
 ];
 
 export default function sitemap() {
+  const programmaticRoutes = getAllProgrammaticSlugs().map((slug) => ({
+    url: absoluteUrl(`/${slug}`),
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.7,
+  }));
+
   return [
     ...staticRoutes.map((route) => ({
       url: absoluteUrl(route),
@@ -67,5 +75,6 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.7,
     })),
+    ...programmaticRoutes,
   ];
 }
