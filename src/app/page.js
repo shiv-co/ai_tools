@@ -5,6 +5,7 @@ import png from "../../public/icons/png.png";
 import text from "../../public/icons/case_change.webp";
 import ai from "../../public/icons/ai_students.webp";
 import Image from "next/image";
+import { FiInstagram, FiMail } from "react-icons/fi";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { buildMetadata, websiteSchema } from "@/lib/seo";
 
@@ -184,6 +185,34 @@ export default function Home() {
         >
           Get Started →
         </Link>
+      </section>
+
+      <section className="px-4 sm:px-6 lg:px-8 pb-20">
+        <div className="mx-auto max-w-4xl rounded-3xl border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] p-8 text-center backdrop-blur">
+          <h2 className="text-2xl font-bold">Have Questions or Suggestions?</h2>
+          <p className="mt-3 text-[var(--text-secondary)]">
+            Reach the AI Tech Tactics team directly if you want to share
+            feedback, request a tool, or connect with us.
+          </p>
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href="https://instagram.com/aitechtactics.official"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] px-5 py-3 text-sm font-medium transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+            >
+              <FiInstagram className="h-4 w-4" />
+              <span>@aitechtactics.official</span>
+            </a>
+            <a
+              href="mailto:aitechtactics@gmail.com"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--border-opacity-80)] bg-[var(--surface-opacity-5)] px-5 py-3 text-sm font-medium transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+            >
+              <FiMail className="h-4 w-4" />
+              <span>aitechtactics@gmail.com</span>
+            </a>
+          </div>
+        </div>
       </section>
       <SeoJsonLd data={websiteSchema()} />
     </main>

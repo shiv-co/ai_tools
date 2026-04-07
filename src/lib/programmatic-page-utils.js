@@ -40,35 +40,70 @@ const socialPlatformCopy = {
 };
 
 function titleCase(value) {
+  const upperMap = {
+    jpg: "JPG",
+    png: "PNG",
+    webp: "WebP",
+    avif: "AVIF",
+    heic: "HEIC",
+    jpeg: "JPEG",
+    jfif: "JFIF",
+    ico: "ICO",
+    tif: "TIF",
+    tiff: "TIFF",
+    svg: "SVG",
+    bmp: "BMP",
+    gif: "GIF",
+    pjpeg: "PJPEG",
+    pjp: "PJP",
+    jpe: "JPE",
+    apng: "APNG",
+  };
+
   return value
     .split("-")
-    .map((part) => (part === "jpg" ? "JPG" : part === "png" ? "PNG" : part === "webp" ? "WebP" : part === "avif" ? "AVIF" : part === "heic" ? "HEIC" : part === "jpeg" ? "JPEG" : part.toUpperCase?.() === part ? part : part.charAt(0).toUpperCase() + part.slice(1)))
+    .map((part) => upperMap[part] || part.charAt(0).toUpperCase() + part.slice(1))
     .join(" ");
 }
 
 function normalizeInputFormat(format) {
-  return format === "jpg" ? "jpeg" : format;
+  if (["jpg", "jpeg", "jfif", "jpe", "pjpeg", "pjp"].includes(format)) return "jpeg";
+  if (["tif", "tiff", "apng", "ico"].includes(format)) return "png";
+  return format;
 }
 
 function normalizeOutputFormat(format) {
   return format === "jpeg" ? "jpg" : format;
 }
 
+function formatSizeLabel(size) {
+  if (size >= 1000 && size % 1000 === 0) return `${size / 1000}MB`;
+  return `${size}KB`;
+}
+
+function formatSizeSlug(size) {
+  if (size >= 1000 && size % 1000 === 0) return `${size / 1000}mb`;
+  return `${size}kb`;
+}
+
 function buildCompressionDescriptor(size) {
+  const sizeLabel = formatSizeLabel(size);
+  const sizeSlug = formatSizeSlug(size);
+
   return {
-    slug: `compress-image-to-${size}kb`,
+    slug: `compress-image-to-${sizeSlug}`,
     pageType: "compression",
     size,
-    title: `Compress Image to ${size}KB Online Free`,
-    metaTitle: `Compress Image to ${size}KB Online | AI Tech Tactics`,
-    description: `Use this free tool to compress your image to ${size}KB without heavy uploads. Ideal for forms, portals, and web optimization.`,
-    metaDescription: `Compress image to ${size}KB online free. Fast browser-based image compressor with no uploads required.`,
+    title: `Compress Image to ${sizeLabel} Online Free`,
+    metaTitle: `Compress Image to ${sizeLabel} Online | AI Tech Tactics`,
+    description: `Use this free tool to compress your image to ${sizeLabel} quickly and privately. Perfect for online forms, websites, and email attachments.`,
+    metaDescription: `Compress image to ${sizeLabel} online free. Fast browser-based image compression with no uploads required.`,
     toolName: "Image Compressor",
     toolType: "image-compressor",
-    canonicalPath: `/compress-image-to-${size}kb`,
+    canonicalPath: `/compress-image-to-${sizeSlug}`,
     instructions: [
       "Upload your image in JPG, PNG, or WebP format.",
-      `Adjust compression until the file is close to ${size}KB.`,
+      `Adjust compression until the file is close to ${sizeLabel}.`,
       "Download the optimized image directly in your browser.",
     ],
     useCases: [
@@ -77,7 +112,7 @@ function buildCompressionDescriptor(size) {
       "faster website images and email attachments",
     ],
     faq: [
-      { q: `How do I compress an image to ${size}KB?`, a: `Upload the image, reduce the quality gradually, and download the optimized result once the file size is close to ${size}KB.` },
+      { q: `How do I compress an image to ${sizeLabel}?`, a: `Upload the image, reduce the quality gradually, and download the optimized result once the file size is close to ${sizeLabel}.` },
       { q: "Does image compression reduce quality?", a: "Compression can reduce quality slightly, but browser-based optimization usually keeps the image usable for web and document uploads." },
       { q: "Is this image compressor free?", a: "Yes. The tool runs in your browser and does not require sign-up or paid credits." },
     ],
@@ -147,30 +182,23 @@ function buildSocialDescriptor(platform) {
   };
 }
 
-function buildConversionDescriptor(from, to, style = "convert") {
-  const titlePrefix = style === "short" ? `${titleCase(from)} to ${titleCase(to)}` : `Convert ${titleCase(from)} to ${titleCase(to)}`;
-  const shortSlug = `${from}-to-${to}`;
-  const slug = style === "short" ? shortSlug : `convert-${from}-to-${to}`;
-
-  let toolType = "image-converter";
-  if (from === "pdf" && to === "jpg") toolType = "pdf-to-jpg";
-  if ((from === "jpg" || from === "jpeg") && to === "pdf") toolType = "jpg-to-pdf";
+function buildConversionDescriptor(from, to) {
+  const titlePrefix = `${titleCase(from)} to ${titleCase(to)}`;
 
   return {
-    slug,
+    slug: `${from}-to-${to}`,
     pageType: "conversion",
     from,
     to,
-    style,
     title: `${titlePrefix} Online Free`,
     metaTitle: `${titlePrefix} Online | AI Tech Tactics`,
     description: `${titlePrefix} with a free browser-based tool. Convert files quickly without installs or server uploads.`,
     metaDescription: `${titlePrefix} online free. Fast browser-based ${titleCase(from)} to ${titleCase(to)} converter with no uploads required.`,
     toolName: `${titleCase(from)} to ${titleCase(to)} Converter`,
-    toolType,
+    toolType: "image-converter",
     inputFormat: normalizeInputFormat(from),
     outputFormat: normalizeOutputFormat(to),
-    canonicalPath: style === "short" ? `/${shortSlug}` : `/convert-${from}-to-${to}`,
+    canonicalPath: `/${from}-to-${to}`,
     instructions: [
       `Upload your ${titleCase(from)} file.`,
       `Convert it to ${titleCase(to)} directly in the browser.`,
@@ -192,10 +220,7 @@ function buildConversionDescriptor(from, to, style = "convert") {
 export const compressionDescriptors = compressionSizes.map(buildCompressionDescriptor);
 export const dimensionDescriptors = imageDimensions.map(buildDimensionDescriptor);
 export const socialDescriptors = socialPlatforms.map(buildSocialDescriptor);
-export const conversionDescriptors = conversions.flatMap(([from, to]) => [
-  buildConversionDescriptor(from, to, "convert"),
-  buildConversionDescriptor(from, to, "short"),
-]);
+export const conversionDescriptors = conversions.map(([from, to]) => buildConversionDescriptor(from, to));
 
 export const programmaticPageDescriptors = [
   ...compressionDescriptors,

@@ -70,6 +70,13 @@ export function organizationSchema() {
       "@type": "ImageObject",
       url: absoluteUrl(ORGANIZATION_LOGO),
     },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: "aitechtactics@gmail.com",
+      url: "mailto:aitechtactics@gmail.com",
+    },
+    sameAs: ["https://instagram.com/aitechtactics.official"],
   };
 }
 
